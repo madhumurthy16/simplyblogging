@@ -7,3 +7,380 @@ Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
+
+ /*--------------------------------------------------------------
+ >>> TABLE OF CONTENTS:
+ ----------------------------------------------------------------
+
+ 	0. 	CSS Reset
+ 	1. 	Document Setup
+ 	2. 	Element Base
+ 	3. 	Helper Classes
+ 	4. 	Site Header
+ 	5. 	Menu Modal
+ 	6. 	Search Modal
+ 	7. 	Page Templates
+ 		a. 	Template: Cover Template
+ 		c. 	Template: Full Width
+ 	8.  Post: Archive
+ 	9.  Post: Single
+ 	10. Blocks
+ 	11. Entry Content
+ 	12. Comments
+ 	13. Site Pagination
+ 	14. Error 404
+ 	15. Widgets
+ 	16. Site Footer
+ 	17. Media Queries
+
+ ----------------------------------------------------------------------------- */
+
+
+ /* -------------------------------------------------------------------------- */
+
+ /*	0. CSS Reset
+ /* -------------------------------------------------------------------------- */
+
+
+ html,
+ body {
+ 	border: none;
+ 	margin: 0;
+ 	padding: 0;
+ }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ p,
+ blockquote,
+ address,
+ big,
+ cite,
+ code,
+ em,
+ font,
+ img,
+ small,
+ strike,
+ sub,
+ sup,
+ li,
+ ol,
+ ul,
+ fieldset,
+ form,
+ label,
+ legend,
+ button,
+ table,
+ caption,
+ tr,
+ th,
+ td {
+ 	border: none;
+ 	font-size: inherit;
+ 	line-height: inherit;
+ 	margin: 0;
+ 	padding: 0;
+ 	text-align: inherit;
+ }
+
+ blockquote::before,
+ blockquote::after {
+ 	content: "";
+ }
+
+ /* -------------------------------------------------------------------------- */
+
+ /*	1. Document Setup
+ /* -------------------------------------------------------------------------- */
+
+ html {
+   font-size: 62.5%; /* 1rem = 10px */
+   scroll-behavior: smooth;
+ }
+
+ @media (prefers-reduced-motion: reduce ) {
+   html {
+     scroll-behavior: auto;
+   }
+ }
+
+body {
+  background: #fff;
+  box-sizing: border-box;
+  color: #0D0D0D;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: -0.015em;
+  text-align: left;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+#site-content {
+  overflow: hidden;
+}
+
+/* Clearing ---------------------------------- */
+
+/* Base Transitions -------------------------- */
+
+a {
+  transition: all 0.15s linear;
+}
+
+/* Screen Reader Text  ----------------------- */
+
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+	word-break: normal;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	-webkit-clip-path: none;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	right: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+
+/* Skip Link --------------------------------- */
+
+.skip-link {
+	left: -9999rem;
+	top: 2.5rem;
+	z-index: 999999999;
+	text-decoration: underline;
+}
+
+.skip-link:focus {
+	display: block;
+	left: 6px;
+	top: 7px;
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	z-index: 100000;
+	right: auto;
+}
+
+/* Fonts ------------------------------------- */
+
+/* Accessibility Settings -------------------- */
+
+@media ( prefers-reduced-motion: reduce ) {
+
+  * {
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+
+/*	2. Element Base
+/* ---------------------------------------------*---------------------------- */
+
+main {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 3.5rem 0 2rem;
+}
+
+h1, .heading-size-1 {
+  font-size: 3.6rem;
+  font-weight: 800;
+  line-height: 1.138888889;
+}
+
+h2, .heading-size-2 {
+  font-size: 3.2rem;
+}
+
+h3, .heading-size-3 {
+  font-size: 2.8rem;
+}
+
+h4, .heading-size-4 {
+  font-size: 2.4rem;
+}
+
+h5, .heading-size-5 {
+  font-size: 2.1rem;
+}
+
+h6, .heading-size-6 {
+  font-size: 1.6rem;
+  letter-spacing: 0.03125em;
+  text-transform: uppercase;
+}
+
+p {
+  line-height: 1.5;
+  margin: 0 0 1em 0;
+}
+
+hr {
+  border-style: solid;
+  border-width: 0.5rem 0 0 0;
+  border-color: #A7C8F2;
+}
+
+a {
+  color: #048ABF;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+/* Lists ------------------------------------- */
+
+ul, ol {
+  margin: 0 0 3rem 3rem;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+li {
+  line-height: 1.5;
+  margin: 0.5rem, 0 0 2rem;
+}
+
+/*.reset-list-style, .reset-list-style ul, .reset-list-style ol {
+  list-style: none;
+  margin: 0;
+}
+
+.reset-list-style li {
+  margin: 0;
+}*/
+
+blockquote {
+  border-color: #027368;
+  border-style: solid;
+  border-width: 0 0 0 0.2rem;
+  color: inherit;
+  font-size: 1em;
+  margin: 4rem 0;
+  padding: 0.5rem 0 0.5rem 2rem;
+}
+
+cite {
+  color: #F25116;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+blockquote cite {
+  disply: block;
+  margin: 2rem 0 0 0;
+}
+
+blockquote p:last-child {
+  margin: 0;
+}
+
+/* Code -------------------------------------- */
+
+/* Media ------------------------------------- */
+
+figure {
+  display: block;
+  margin: 0;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/* GALLERIES */
+
+/* Inputs ------------------------------------ */
+
+
+
+/* -------------------------------------------------------------------------- */
+
+/*	3. Helper Classes
+/* -------------------------------------------------------------------------- */
+
+/* Layout ------------------------------------ */
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+/* Sections ---------------------------------- */
+
+section {
+  padding: 5rem 0;
+  width: 100%;
+}
+
+/* Search Form ------------------------------- */
+
+
+/* Social Icons ------------------------------ */
+
+
+/* -------------------------------------------------------------------------- */
+
+/*	4.	Site Header
+/* -------------------------------------------------------------------------- */
