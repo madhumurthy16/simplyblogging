@@ -19,8 +19,8 @@
 
           <div class="header-titles">
 
-            <h1><a href="<?php echo site_url(); ?>"><?php echo get_bloginfo( 'name' ); ?></h1>
-            <p><?php echo get_bloginfo( 'description' ); ?></p>
+            <h1 class="site-title"><a href="<?php echo site_url(); ?>"><?php echo get_bloginfo( 'name' ); ?></h1>
+            <div class="site-description"><?php echo get_bloginfo( 'description' ); ?></div>
           </div> <!-- .header-titles -->
 
         </div> <!-- .header-titles-wrapper -->
