@@ -85,7 +85,9 @@ add_action( 'after_setup_theme', 'simplyblogging_theme_support');
 */
 function simplyblogging_register_styles() {
   $theme_version = wp_get_theme()->get( 'version' );
+  wp_enqueue_style( 'custom-google-fonts', '//fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700,700i,800' );
   wp_enqueue_style( 'simplyblogging_style', get_stylesheet_uri(), array(), $theme_version );
+
 }
 
 add_action( 'wp_enqueue_scripts', 'simplyblogging_register_styles' );
