@@ -7,6 +7,7 @@
  * Register Scripts
  * Register Menus
  * Register Sidebars
+ * Custom excerpt length
  */
 
 /**
@@ -169,6 +170,18 @@ function simplyblogging_sidebar_registration() {
     )
   );
 
+  // Right Sidebar
+  register_sidebar(
+    array_merge(
+        $shared_args,
+        array(
+          'name' => __( 'Right Sidebar', 'simplyblogging' ),
+          'id'   => 'sidebar-right',
+          'description' => __( 'Widgets in this area will be displayed on the right side of the main content.', 'simplyblogging' ),
+      )
+    )
+  );
+
 	// Footer #1.
 	register_sidebar(
 		array_merge(
@@ -197,4 +210,10 @@ function simplyblogging_sidebar_registration() {
 
 add_action( 'widgets_init', 'simplyblogging_sidebar_registration' );
 
+// Add custom excerpt length
+function simplyblogging_custom_excerpt_length( $length ) {
+  return 20;
+}
+
+add_filter( 'excerpt_length', 'simplyblogging_custom_excerpt_length', 999 );
 ?>
