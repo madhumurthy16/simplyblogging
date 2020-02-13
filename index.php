@@ -5,54 +5,54 @@
 
 get_header();
 ?>
+<div class="container">
+  <aside id="sidebar-left section-inner">
+    <?php dynamic_sidebar( 'sidebar-left' ); ?>
+  </aside>
 
-<aside id="sidebar-left">
-  <?php dynamic_sidebar( 'sidebar-left' ); ?>
-</aside>
+  <main id="site-content" role="main" class="section-inner medium">
+    <?php
+    if( have_posts() ) {
+      $i = 0;
+      while( have_posts() ) {
+        $i++;
+        if( $i > 1 ) {
+          echo '<hr>';
+        }
+      the_post();
+      ?>
 
-<main id="site-content" role="main">
-  <?php
-  if( have_posts() ) {
-    $i = 0;
-    while( have_posts() ) {
-      $i++;
-      if( $i > 1 ) {
-        echo '<hr>';
-      }
-    the_post();
-    ?>
+      <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-    <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+        <figure class="featured-media">
+          <div class="featured-media-inner section-inner thin">
+            <?php the_post_thumbnail(); ?>
+          </div> <!-- .featured-media-inner -->
+        </figure>
 
-      <header class="entry-header">
-        <div class="entry-header-inner section-inner medium">
-          <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-          <p><?php echo get_the_category_list( ', ' )?></p>
-        </div> <!-- .entry-header-inner -->
-      </header> <!-- .entry-header -->
+        <header class="entry-header">
+          <div class="entry-header-inner section-inner thin">
+            <p class="margin-top"><?php echo get_the_category_list( ', ' )?></p>
+            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+          </div> <!-- .entry-header-inner -->
+        </header> <!-- .entry-header -->
 
-      <figure class="featured-media">
-        <div class="featured-media-inner section-inner medium">
-          <?php the_post_thumbnail(); ?>
-        </div> <!-- .featured-media-inner -->
-      </figure>
+        <div class="post-inner">
+          <div class="entry-content section-inner thin">
+            <?php
+              the_excerpt();
+            ?>
+            <p><a href="<?php the_permalink(); ?>">Continue Reading</a></p>
+          </div> <!-- .entry-content -->
+        </div> <!-- .post-inner -->
 
-      <div class="post-inner">
-        <div class="entry-content section-inner medium">
-          <?php
-            the_excerpt();
-          ?>
-          <p><a href="<?php the_permalink(); ?>">Continue Reading</a></p>
-        </div> <!-- .entry-content -->
-      </div> <!-- .post-inner -->
+      </article>
 
-    </article>
+    <?php }
+    } ?>
 
-  <?php }
-  } ?>
-
-</main> <!-- #site-content -->
-
+  </main> <!-- #site-content -->
+</div> <!-- .container -->
 <?php
   get_footer();
 ?>
