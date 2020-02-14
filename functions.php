@@ -88,7 +88,7 @@ function simplyblogging_register_styles() {
   $theme_version = wp_get_theme()->get( 'version' );
   wp_enqueue_style( 'custom-google-fonts', '//fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700,700i,800' );
   wp_enqueue_style( 'simplyblogging_style', get_stylesheet_uri(), array(), $theme_version );
-
+  wp_enqueue_style('font-awesome', 'maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
 }
 
 add_action( 'wp_enqueue_scripts', 'simplyblogging_register_styles' );
@@ -216,4 +216,3 @@ function simplyblogging_custom_excerpt_length( $length ) {
 }
 
 add_filter( 'excerpt_length', 'simplyblogging_custom_excerpt_length', 999 );
-?>
