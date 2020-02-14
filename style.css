@@ -41,7 +41,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  /*	0. CSS Reset
  /* -------------------------------------------------------------------------- */
 
-
  html,
  body {
  	border: none;
@@ -573,14 +572,8 @@ section {
 
 /* Widget: Categories ------------------------ */
 
-.widget_categories .widget-title {
-  display: none;
-}
-
-.widget_categories ul li a:before {
-   font-family: "Font Awesome";
-   font-weight: 900;
-   content: "\f037";
+.widget_categories ul li {
+   border-bottom: 1px solid #F25116;
 }
 
 /* Widget: Search ---------------------------- */
