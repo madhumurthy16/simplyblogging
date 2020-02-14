@@ -20,7 +20,7 @@ $has_sidebar_2 = is_active_sidebar( 'sidebar-2' );
     <?php if ( $has_sidebar_2 ) { ?>
 
       <div class="footer-widgets column-two">
-        <?php dynamic_sidebar( 'sidebar-2' )?>
+        <?php dynamic_sidebar( 'sidebar-2' ); ?>
       </div>
 
   </div> <!-- .footer-widgets-wrapper -->
