@@ -19,7 +19,7 @@
 
           <div class="header-titles">
 
-            <h1 class="site-title"><a href="<?php echo site_url(); ?>"><?php echo get_bloginfo( 'name' ); ?></h1>
+            <h1 class="site-title"><a href="<?php echo site_url(); ?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
             <div class="site-description"><?php echo get_bloginfo( 'description' ); ?></div>
           </div> <!-- .header-titles -->
 

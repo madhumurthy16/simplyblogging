@@ -516,3 +516,89 @@ section {
   /*padding-top: 5rem;*/
   padding-top: 2rem;
 }
+
+/* -------------------------------------------------------------------------- */
+
+/*	15.	Widgets
+/* -------------------------------------------------------------------------- */
+
+/* Widget Base ------------------------------- */
+
+.widget {
+  margin-top: 3rem;
+}
+
+.widget:first-child {
+  margin-top: 0;
+}
+
+.widget .widget-title {
+  margin: 0 0 2rem;
+}
+
+.widget li {
+  margin: 1rem 0 0 0;
+}
+
+.widget li:first-child {
+  margin-top: 0;
+}
+
+/* Base List Widget -------------------------- */
+
+.widget_archive ul,
+.widget_categories ul,
+.widget_recent_entries ul {
+  list-style: none;
+  margin: 0;
+}
+
+.widget_archive a,
+.widget_categories a,
+.widget_recent_entries a,
+.widget_tag_cloud a {
+  color: #F25116;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.widget_archive a:focus,
+.widget_archive a:hover,
+.widget_categories a:focus,
+.widget_categories a:hover,
+.widget_recent_entries a:focus,
+.widget_recent_entries a:hover {
+  color: #048ABF;
+}
+
+/* Widget: Categories ------------------------ */
+
+.widget_categories .widget-title {
+  display: none;
+}
+
+.widget_categories ul li a:before {
+   font-family: "Font Awesome";
+   font-weight: 900;
+   content: "\f037";
+}
+
+/* Widget: Search ---------------------------- */
+
+.widget_search .search_field {
+  border-color: #dedfdf;
+}
+
+/* Widget: Tag Cloud ------------------------- */
+
+.widget_tag_cloud a.tag-cloud-link {
+  font-weight: 700;
+  margin-right: 0.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.widget_tag_cloud a:focus,
+.widget_tag_cloud a:hover {
+  color: #048ABF;
+}
