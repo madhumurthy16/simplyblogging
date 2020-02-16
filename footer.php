@@ -42,16 +42,16 @@ $has_sidebar_2 = is_active_sidebar( 'sidebar-2' );
     <?php } ?>
 
     <div class="footer-credits">
-
-      <p class="footer-copyright">&copy;
-        <?php echo date_i18n(
-          /* translators: Copyright date format, see https://secure.php.net/date */
-          _x( 'Y', 'copyright date format', 'simplyblogging' )
-        );
-        ?>
-        <a href="<?php echo esc_url( home_url( '/' )); ?>"><?php bloginfo( 'name' ); ?></a>
-      </p> <!-- .footer-copyright -->
-
+      <div class="section-inner">
+        <p class="footer-copyright">&copy;
+          <?php echo date_i18n(
+            /* translators: Copyright date format, see https://secure.php.net/date */
+            _x( 'Y', 'copyright date format', 'simplyblogging' )
+          );
+          ?>
+          <a href="<?php echo esc_url( home_url( '/' )); ?>"><?php bloginfo( 'name' ); ?></a>
+        </p> <!-- .footer-copyright -->
+      </div> <!-- .section-inner -->
     </div> <!-- .footer-credits -->
 
   </div> <!-- .section-inner -->

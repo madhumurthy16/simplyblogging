@@ -600,3 +600,38 @@ section {
 
 /*	16. Site Footer
 /* -------------------------------------------------------------------------- */
+
+#site-footer, .footer-credits {
+  background-color: #fff;
+  border-color: red;
+  border-style: solid;
+  border-width: 0;
+  margin-top: 5rem;
+  border-top-width: 0.1rem;
+}
+
+.footer-widgets-outer-wrapper, .footer-credits {
+  padding: 3rem 0;
+}
+
+/* Footer Widgets ---------------------------- */
+
+.footer-widgets-outer-wrapper {
+  border-bottom: 0.1rem solid #dedfdf;
+}
+
+.footer-widgets + .footer-widgets {
+  margin-top: 3rem;
+}
+
+/* Footer Credits ---------------------------- */
+
+.footer-credits {
+  font-size: 1.6rem;
+}
+
+.footer-credits .section-inner {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+}
