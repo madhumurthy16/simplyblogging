@@ -8,9 +8,9 @@
 $has_sidebar_1 = is_active_sidebar( 'sidebar-1' );
 $has_sidebar_2 = is_active_sidebar( 'sidebar-2' );
 ?>
-
 <footer id="site-footer" role="contentinfo" class="header-footer-group">
   <div class="section-inner">
+
   <!-- Only output the container if there are elements to display. -->
 
     <?php if( $has_sidebar_1 || $has_sidebar_2 ) { ?>
@@ -51,10 +51,12 @@ $has_sidebar_2 = is_active_sidebar( 'sidebar-2' );
           ?>
           <a href="<?php echo esc_url( home_url( '/' )); ?>"><?php bloginfo( 'name' ); ?></a>
         </p> <!-- .footer-copyright -->
+        <p class="created-by">Created by, <a href="http://madhumurthy.info">Madhu Murthy</a></p>
       </div> <!-- .section-inner -->
     </div> <!-- .footer-credits -->
-
+    
   </div> <!-- .section-inner -->
+
 </footer>
 
 <?php wp_footer(); ?>
