@@ -601,6 +601,10 @@ section {
 /*	16. Site Footer
 /* -------------------------------------------------------------------------- */
 
+#site-footer {
+  margin-top: 5rem;
+}
+
 .footer-widgets-outer-wrapper {
   background-color: #fff;
   border-color: #dedfdf;
@@ -608,14 +612,13 @@ section {
   border-width: 0;
   border-top-width: 0.1rem;
   border-bottom: 0.1rem solid #dedfdf;
-  margin-top: 5rem;
 }
 
 /* Footer Widgets ---------------------------- */
 
-.footer-widgets-outer-wrapper, #site-footer {
+/*#site-footer {
   padding: 3rem 0;
-}
+}*/
 
 .footer-widgets + .footer-widgets {
   margin-top: 3rem;
@@ -628,7 +631,7 @@ section {
   padding: 3rem 0;
 }
 
-.footer-credits .section-inner {
+.footer-credits {
   align-items: baseline;
   display: flex;
   justify-content: space-between;
@@ -650,6 +653,9 @@ section {
 
 .footer-copyright {
   font-weight: 600;
+}
+
+.footer-copyright, .created-by {
   margin: 0;
 }
 
@@ -662,4 +668,6 @@ section {
   .footer-widgets-outer-wrapper {
       padding: 8rem 0;
   }
+
+
 }
