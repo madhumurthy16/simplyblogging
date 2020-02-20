@@ -6,11 +6,11 @@
 get_header();
 ?>
 <div class="container">
-  <aside id="sidebar-left section-inner">
+  <aside id="sidebar-left">
     <?php dynamic_sidebar( 'sidebar-left' ); ?>
   </aside>
 
-  <main id="site-content" role="main" class="section-inner medium">
+  <main id="site-content" role="main">
     <?php
     if( have_posts() ) {
       $i = 0;
@@ -25,20 +25,20 @@ get_header();
       <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
         <figure class="featured-media">
-          <div class="featured-media-inner section-inner thin">
+          <div class="featured-media-inner">
             <?php the_post_thumbnail(); ?>
           </div> <!-- .featured-media-inner -->
         </figure>
 
         <header class="entry-header">
-          <div class="entry-header-inner section-inner thin">
+          <div class="entry-header-inner">
             <p class="margin-top"><?php echo get_the_category_list( ', ' )?></p>
             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
           </div> <!-- .entry-header-inner -->
         </header> <!-- .entry-header -->
 
         <div class="post-inner">
-          <div class="entry-content section-inner thin">
+          <div class="entry-content">
             <?php
               the_excerpt();
             ?>
