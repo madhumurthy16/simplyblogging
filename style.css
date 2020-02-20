@@ -135,17 +135,6 @@ body {
   flex-wrap: wrap;
 }
 
-#sidebar-left,
-#sidebar-right {
-  max-width: 20rem;
-}
-
-#site-content {
-  overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-}
-
 /* Clearing ---------------------------------- */
 
 /* Base Transitions -------------------------- */
