@@ -614,11 +614,11 @@ section {
   border-bottom: 0.1rem solid #dedfdf;
 }
 
-/* Footer Widgets ---------------------------- */
-
-/*#site-footer {
+.footer-widgets-outer-wrapper, .footer-credits {
   padding: 3rem 0;
-}*/
+}
+
+/* Footer Widgets ---------------------------- */
 
 .footer-widgets + .footer-widgets {
   margin-top: 3rem;
@@ -628,13 +628,6 @@ section {
 
 .footer-credits {
   font-size: 1.6rem;
-  padding: 3rem 0;
-}
-
-.footer-credits {
-  align-items: baseline;
-  display: flex;
-  justify-content: space-between;
 }
 
 .footer-credits a {
@@ -655,7 +648,7 @@ section {
   font-weight: 600;
 }
 
-.footer-copyright, .created-by {
+.created-by {
   margin: 0;
 }
 
@@ -664,10 +657,91 @@ section {
 /*	17. Media Queries
 /* -------------------------------------------------------------------------- */
 
+
 @media (min-width: 700px) {
+
+  /* Helper Classes ------------------------- */
+
+  /* SECTIONS */
+
+  .section-inner {
+    width: calc(100% - 8rem);
+  }
+
+  /* Widgets ------------------------------- */
+
+  .widget .widget-title {
+    margin-bottom: 3rem;
+  }
+
+  /* Site Footer --------------------------- */
+
+  #site-footer {
+    margin-top: 8rem;
+  }
+
+  /* FOOTER WIDGETS */
+
   .footer-widgets-outer-wrapper {
       padding: 8rem 0;
   }
 
+  .footer-widgets-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-left: -4rem;
+    width: calc(100% + 4rem);
+  }
 
+  .footer-widgets {
+    margin-left: 4rem;
+    width: 50%;
+  }
+
+  .footer-widgets + .footer-widgets {
+    margin-top: 0;
+  }
+
+  .footer-widgets .widget {
+    margin-top: 5rem;
+  }
+
+  .footer-widgets .widget:first-child {
+    margin-top: 0;
+  }
+
+  /* FOOTER CREDITS */
+
+  .footer-credits {
+    font-size: 1.8rem;
+    padding: 4.3rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer-copyright {
+    font-weight: 700;
+  }
+}
+
+@media ( min-width: 1220px ) {
+
+  /* Widgets ------------------------------- */
+
+  .widget-content {
+    font-size: 2.1rem;
+  }
+
+  /* Site Footer --------------------------- */
+
+  /* FOOTER WIDGETS */
+
+  .footer-widgets-wrapper {
+    margin-left: -6rem;
+    width: calc(100% + 6rem);
+  }
+
+  .footer-widgets {
+    margin-left: 6rem;
+  }
 }
