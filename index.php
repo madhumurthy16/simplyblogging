@@ -9,6 +9,7 @@ get_header();
   <div class="section-inner">
     <div class="content-outer-wrapper">
       <div class="content-wrapper">
+
         <aside id="sidebar-left">
           <?php dynamic_sidebar( 'sidebar-left' ); ?>
         </aside>
@@ -55,11 +56,12 @@ get_header();
           } ?>
 
         </main> <!-- #site-content -->
-        
+
       </div> <!-- .content-wrapper -->
     </div> <!-- .content-outer-wrapper -->
   </div> <!-- .section-inner -->
 </div> <!-- .container -->
+
 <?php
   get_footer();
 ?>
