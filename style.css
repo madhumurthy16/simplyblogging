@@ -486,6 +486,26 @@ section {
   padding: 3rem 0;
 }
 
+.blog-posts {
+  display: flex;
+  justify-content: space-between;
+  margin-left: -2rem;
+  flex-flow: row wrap;
+}
+
+article {
+  flex: 1 0;
+  /*flex: auto */
+  /* flex: 1 40% */
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  min-width: 40%;
+  /*width: 40%;*/
+}
+
+.blog-posts article:last-child {
+  width: 40%;
+}
 
 
 /* -------------------------------------------------------------------------- */
@@ -680,6 +700,20 @@ section {
     width: calc(100% + 4rem);
   }
 
+  #sidebar-left,
+  #main-content {
+    margin-left: 4rem;
+  }
+
+  #sidebar-left {
+    /*width: 20%;*/
+    flex: 1;
+  }
+
+  #main-content {
+    /*width: 80%;*/
+    flex: 4;
+  }
 
   /* Site Footer --------------------------- */
 
@@ -744,6 +778,11 @@ section {
   .content-wrapper {
     margin-left: -6rem;
     width: calc(100% + 6rem);
+  }
+
+  #sidebar-left,
+  #main-content {
+    margin-left: 6rem;
   }
 
   /* Site Footer --------------------------- */
