@@ -2,7 +2,7 @@
   get_header();
 ?>
 <div class="container">
-  <main id="site-content" class="section-inner medium" role="main">
+  <main id="main-content" class="section-inner medium" role="main">
 
     <?php
     if( have_posts() ) {
