@@ -669,9 +669,18 @@ article {
 
 @media (min-width: 700px) {
 
+  /* Element Base ------------------------- */
+
+  /* TITLES */
+
+  h1 {
+    margin-top: 0;
+  }
+
   /* Layout -------------------------------- */
 
-  #sidebar-left {
+  #sidebar-left,
+  #sidebar-right {
     /*flex: 1 20%;*/
     flex: 1;
   }
@@ -709,7 +718,8 @@ article {
   }
 
   #sidebar-left,
-  #main-content {
+  #main-content,
+  #sidebar-right {
     margin-left: 4rem;
   }
 
@@ -727,7 +737,8 @@ article {
     /*width: 40%;*/
   }
 
-  #main-content .blog-posts article > figure:first-of-type {
+  #main-content .blog-posts article:first-of-type > figure,
+  #main-content .blog-posts article:nth-of-type(2) > figure {
     margin-top: 0;
   }
 
@@ -785,7 +796,8 @@ article {
 
   /* Layout -------------------------------- */
 
-  #sidebar-left {
+  #sidebar-left,
+  #sidebar-right {
     /*flex: 1 20%;*/
     flex: 1;
   }
@@ -812,7 +824,8 @@ article {
   }
 
   #sidebar-left,
-  #main-content {
+  #main-content,
+  #sidebar-right {
     margin-left: 6rem;
   }
 
