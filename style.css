@@ -264,6 +264,7 @@ hr {
   border-style: solid;
   border-width: 0.5rem 0 0 0;
   border-color: #A7C8F2;
+  margin-left: 2rem;
 }
 
 a {
@@ -487,26 +488,21 @@ section {
 }
 
 .blog-posts {
-  display: flex;
-  justify-content: space-between;
   margin-left: -2rem;
-  flex-flow: row wrap;
+  /*display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;*/
 }
 
 article {
-  flex: 1 0;
+  /*flex: 1 0;*/
   /*flex: auto */
   /* flex: 1 40% */
   margin-left: 2rem;
   margin-bottom: 2rem;
-  min-width: 40%;
+  /*min-width: 40%;*/
   /*width: 40%;*/
 }
-
-.blog-posts article:last-child {
-  width: 40%;
-}
-
 
 /* -------------------------------------------------------------------------- */
 
@@ -673,7 +669,23 @@ article {
 
 @media (min-width: 700px) {
 
+  /* Layout -------------------------------- */
+
+  #sidebar-left {
+    /*flex: 1 20%;*/
+    flex: 1;
+  }
+
+  #main-content {
+    /*flex: 1 80%;*/
+    flex: 3;
+  }
+
   /* Helper Classes ------------------------- */
+
+  hr {
+    display: none;
+  }
 
   /* SECTIONS */
 
@@ -689,10 +701,6 @@ article {
 
   /* Posts ------------------------------------- */
 
-  .content-outer-wrapper {
-    padding: 8rem 0;
-  }
-
   .content-wrapper {
     display: flex;
     justify-content: space-between;
@@ -705,14 +713,22 @@ article {
     margin-left: 4rem;
   }
 
-  #sidebar-left {
-    /*width: 20%;*/
-    flex: 1;
+  .blog-posts {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
   }
 
-  #main-content {
-    /*width: 80%;*/
-    flex: 4;
+  article {
+    flex: 1 0;
+    /*flex: auto */
+    /* flex: 1 40% */
+    min-width: 40%;
+    /*width: 40%;*/
+  }
+
+  #main-content .blog-posts article > figure:first-of-type {
+    margin-top: 0;
   }
 
   /* Site Footer --------------------------- */
@@ -762,6 +778,21 @@ article {
 
   .footer-copyright {
     font-weight: 700;
+  }
+}
+
+@media (min-width: 836px) {
+
+  /* Layout -------------------------------- */
+
+  #sidebar-left {
+    /*flex: 1 20%;*/
+    flex: 1;
+  }
+
+  #main-content {
+    /*flex: 1 80%;*/
+    flex: 4;
   }
 }
 
