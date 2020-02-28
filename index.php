@@ -30,17 +30,15 @@ get_header();
               <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
                 <figure class="featured-media">
-                  <div class="featured-media-inner">
+                  <div>
                     <?php the_post_thumbnail(); ?>
                   </div> <!-- .featured-media-inner -->
                 </figure>
 
-                <header class="entry-header">
-                  <div class="entry-header-inner">
-                    <p class="margin-top"><?php echo get_the_category_list( ', ' )?></p>
-                    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                  </div> <!-- .entry-header-inner -->
-                </header> <!-- .entry-header -->
+                <header>
+                    <p class="categories-list"><?php echo get_the_category_list( ', ' )?></p>
+                    <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                </header>
 
                 <div class="post-inner">
                   <div class="entry-content">
