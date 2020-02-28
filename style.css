@@ -502,13 +502,13 @@ body:not(.single) article {
 
 /* Categories ------------------------------ */
 
-body:not(.single) .categories-list {
+/*body:not(.single) .categories-list {
   margin: 2rem 0;
-}
+}*/
 
 .categories-list {
   line-height: 1.25;
-  margin-top: 2rem;
+  margin: 2rem 0;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -524,6 +524,10 @@ h2.entry-title {
 }
 
 /* Featured Media ---------------------------- */
+
+body.single .featured-media {
+  margin-top: 0;
+}
 
 .featured-media {
   margin-top: 5rem;
@@ -804,12 +808,12 @@ h2.entry-title {
 
   /* CATEGORIES */
 
-  body:not(.single) .categories-list {
+  /*body:not(.single) .categories-list {
     margin: 3rem 0;
-  }
+  }*/
 
   .categories-list {
-    margin-top: 3rem;
+    margin: 3rem 0;
   }
 
   /* Site Footer --------------------------- */
