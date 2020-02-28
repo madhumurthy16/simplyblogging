@@ -368,10 +368,6 @@ img {
   padding: 0;
 }
 
-.margin-top {
-  margin-top: 1em;
-}
-
 /* Sections ---------------------------------- */
 
 section {
@@ -494,7 +490,7 @@ section {
   flex-flow: row wrap;*/
 }
 
-article {
+body:not(.single) article {
   /*flex: 1 0;*/
   /*flex: auto */
   /* flex: 1 40% */
@@ -504,10 +500,28 @@ article {
   /*width: 40%;*/
 }
 
+/* Categories ------------------------------ */
+
+body:not(.single) .categories-list {
+  margin: 2rem 0;
+}
+
+.categories-list {
+  line-height: 1.25;
+  margin-top: 2rem;
+}
+
 /* -------------------------------------------------------------------------- */
 
 /*	9. Post: Single
 /* -------------------------------------------------------------------------- */
+
+/* Post Header ------------------------------- */
+
+h1.entry-title,
+h2.entry-title {
+  margin: 0;
+}
 
 /* Featured Media ---------------------------- */
 
@@ -521,7 +535,6 @@ article {
 }*/
 
 .post-inner {
-  /*padding-top: 5rem;*/
   padding-top: 2rem;
 }
 
@@ -673,8 +686,52 @@ article {
 
   /* TITLES */
 
-  h1 {
-    margin-top: 0;
+  h1,
+  .heading-size-1,
+  h2,
+  .heading-size-2,
+  h3,
+  .heading-size-3 {
+    margin: 6rem auto 3rem;
+  }
+
+  h4,
+  .heading-size-4,
+  h5,
+  .heading-size-5,
+  h6,
+  .heading-size-6 {
+    margin: 4.5rem auto 2.5rem;
+  }
+
+  h1,
+  .heading-size-1 {
+    font-size: 6.4rem;
+  }
+
+  h2,
+  .heading-size-2 {
+    font-size: 4.8rem;
+  }
+
+  h3,
+  .heading-size-3 {
+    font-size: 4rem;
+  }
+
+  h4,
+  .heading-size-4 {
+    font-size: 3.2rem;
+  }
+
+  h5,
+  .heading-size-5 {
+    font-size: 2.4rem;
+  }
+
+  h6,
+  .heading-size-6 {
+    font-size: 1.8rem;
   }
 
   /* Layout -------------------------------- */
@@ -729,17 +786,30 @@ article {
     flex-flow: row wrap;
   }
 
-  article {
+  body:not(.single) article {
     flex: 1 0;
-    /*flex: auto */
-    /* flex: 1 40% */
     min-width: 40%;
-    /*width: 40%;*/
   }
 
-  #main-content .blog-posts article:first-of-type > figure,
-  #main-content .blog-posts article:nth-of-type(2) > figure {
+  body:not(.single) #main-content .blog-posts article:first-of-type > figure,
+  body:not(.single) #main-content .blog-posts article:nth-of-type(2) > figure {
     margin-top: 0;
+  }
+
+  /* POST HEADER */
+
+  .post-inner {
+    padding-top: 3rem;
+  }
+
+  /* CATEGORIES */
+
+  body:not(.single) .categories-list {
+    margin: 3rem 0;
+  }
+
+  .categories-list {
+    margin-top: 3rem;
   }
 
   /* Site Footer --------------------------- */
@@ -809,6 +879,15 @@ article {
 }
 
 @media ( min-width: 1220px ) {
+
+  /* Element Base ------------------------- */
+
+  /* TITLES */
+
+  h1,
+  .heading-size-1 {
+    font-size: 8.4rem;
+  }
 
   /* Widgets ------------------------------- */
 
