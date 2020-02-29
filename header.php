@@ -21,8 +21,13 @@
 
             <h1 class="site-title"><a href="<?php echo site_url(); ?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
             <div class="site-description"><?php echo get_bloginfo( 'description' ); ?></div>
+
           </div> <!-- .header-titles -->
 
         </div> <!-- .header-titles-wrapper -->
     </div> <!-- .header-inner -->
   </header>
+
+  <?php
+  // Output the menu modal
+  get_template_part( 'template-parts/modal-menu' );
