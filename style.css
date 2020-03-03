@@ -472,6 +472,51 @@ section {
 
 /* -------------------------------------------------------------------------- */
 
+/*	5. Menu Modal
+/* -------------------------------------------------------------------------- */
+
+/* Left Sidebar ------------------------------ */
+
+#sidebar-left {
+  display: none;
+}
+
+.site-header__menu {
+   visibility: hidden;
+   position: absolute;
+   background-color: rgba(13, 55, 94, 0.89);
+   left: 0;
+   right: 0;
+   top: -20px;
+   padding-top: 58px;
+   opacity: 0;
+   -webkit-transform: translateY(-20%);
+           transform: translateY(-20%);
+   transition: opacity .3s ease-out, visibility .3s ease-out, -webkit-transform .3s ease-out;
+   transition: opacity .3s ease-out, visibility .3s ease-out, transform .3s ease-out;
+   transition: opacity .3s ease-out, visibility .3s ease-out, transform .3s ease-out, -webkit-transform .3s ease-out;
+   padding-bottom: 20px;
+ }
+
+ .site-header__menu-trigger {
+   color: red;
+   cursor: pointer;
+   font-size: 1.2rem;
+   position: absolute;
+   z-index: 10;
+   top: 70px;
+   right: 46px;
+ }
+
+ .site-header__menu--active {
+   opacity: 1;
+   -webkit-transform: translateY(0);
+           transform: translateY(0);
+   visibility: visible;
+ }
+
+/* -------------------------------------------------------------------------- */
+
 /*	8. Post: Archive
 /* -------------------------------------------------------------------------- */
 
@@ -678,29 +723,6 @@ body.single .featured-media {
   margin: 0;
 }
 
-.site-header__menu {
-   visibility: hidden;
-   position: absolute;
-   background-color: rgba(13, 55, 94, 0.89);
-   left: 0;
-   right: 0;
-   top: -20px;
-   padding-top: 58px;
-   opacity: 0;
-   -webkit-transform: translateY(-20%);
-           transform: translateY(-20%);
-   transition: opacity .3s ease-out, visibility .3s ease-out, -webkit-transform .3s ease-out;
-   transition: opacity .3s ease-out, visibility .3s ease-out, transform .3s ease-out;
-   transition: opacity .3s ease-out, visibility .3s ease-out, transform .3s ease-out, -webkit-transform .3s ease-out;
-   padding-bottom: 20px;
- }
-
- .site-header__menu--active {
-   opacity: 1;
-   -webkit-transform: translateY(0);
-           transform: translateY(0);
-   visibility: visible;
- }
 
 /* -------------------------------------------------------------------------- */
 
@@ -764,6 +786,10 @@ body.single .featured-media {
 
   /* Layout -------------------------------- */
 
+  #sidebar-left {
+    display: block;
+  }
+
   #sidebar-left,
   #sidebar-right {
     /*flex: 1 20%;*/
@@ -786,6 +812,12 @@ body.single .featured-media {
   .section-inner {
     width: calc(100% - 8rem);
   }
+
+  /* Menu Modal ---------------------------- */
+
+  .site-header__menu-trigger {
+     display: none;
+   }
 
   /* Widgets ------------------------------- */
 
