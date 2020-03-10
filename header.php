@@ -23,6 +23,8 @@
             <div class="site-description"><?php echo get_bloginfo( 'description' ); ?></div>
 
           </div> <!-- .header-titles -->
+          
+          <i class="site-header-menu-trigger fa fa-bars" aria-hidden="true"></i>
 
         </div> <!-- .header-titles-wrapper -->
     </div> <!-- .header-inner -->
