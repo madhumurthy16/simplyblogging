@@ -430,9 +430,8 @@ section {
 .header-titles-wrapper {
   align-items: center;
   display: flex;
-  justify-content: center;
-  padding: 0 4rem;
-  text-align: center;
+  justify-content: space-between;
+  text-align: left;
 }
 
 .site-title,
@@ -481,10 +480,10 @@ section {
   display: none;
 }
 
-.site-header__menu {
+.menu-modal {
    visibility: hidden;
    position: absolute;
-   background-color: rgba(13, 55, 94, 0.89);
+   background-color: #fff;
    left: 0;
    right: 0;
    top: -20px;
@@ -498,21 +497,25 @@ section {
    padding-bottom: 20px;
  }
 
- .site-header__menu-trigger {
-   color: red;
+ .site-header-menu-trigger {
+   color: #048ABF;
    cursor: pointer;
-   font-size: 1.2rem;
-   position: absolute;
+   font-size: 2rem;
+   /*position: absolute;*/
    z-index: 10;
-   top: 70px;
-   right: 46px;
+   /*top: 70px;
+   right: 46px;*/
  }
 
- .site-header__menu--active {
+ .site-header-menu-active {
    opacity: 1;
    -webkit-transform: translateY(0);
            transform: translateY(0);
    visibility: visible;
+ }
+
+ .menu-modal ul li a {
+   color: #F25116;
  }
 
 /* -------------------------------------------------------------------------- */
@@ -577,6 +580,10 @@ body.single .featured-media {
 .featured-media {
   margin-top: 5rem;
   position: relative;
+}
+
+body:not(.single) #main-content .blog-posts article:first-of-type > figure {
+  margin-top: 0;
 }
 
 /*.featured-media img {
@@ -813,9 +820,18 @@ body.single .featured-media {
     width: calc(100% - 8rem);
   }
 
+  /* Site Header ----------------------------- */
+
+  /* HEADER TITLES */
+
+  .header-titles-wrapper {
+    justify-content: center;
+    text-align: center;
+    padding: 0 4rem;
+  }
   /* Menu Modal ---------------------------- */
 
-  .site-header__menu-trigger {
+  .site-header-menu-trigger {
      display: none;
    }
 
@@ -851,7 +867,6 @@ body.single .featured-media {
     min-width: 40%;
   }
 
-  body:not(.single) #main-content .blog-posts article:first-of-type > figure,
   body:not(.single) #main-content .blog-posts article:nth-of-type(2) > figure {
     margin-top: 0;
   }
