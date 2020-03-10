@@ -4,8 +4,8 @@ var $j = jQuery.noConflict();
 
 class MobileMenu {
   constructor() {
-    this.menu = $j(".site-header__menu");
-    this.openButton = $j(".site-header__menu-trigger");
+    this.menu = $j(".menu-modal");
+    this.openButton = $j(".site-header-menu-trigger");
     this.events();
   }
 
@@ -15,7 +15,7 @@ class MobileMenu {
 
   openMenu() {
     this.openButton.toggleClass("fa-bars fa-window-close");
-    this.menu.toggleClass("site-header__menu--active");
+    this.menu.toggleClass("site-header-menu-active");
   }
 }
 
