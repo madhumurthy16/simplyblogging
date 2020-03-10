@@ -1,22 +1,18 @@
 <?php
 /**
-* Displays the menu icon and Modal
+* Displays the menu modal
 *
 */
 ?>
 
-<div class="menu-modal">
-
-  <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i>
-
-  <div class="site-header__menu group">
-    <nav class="mobile-navigation">
-
+<div class="menu-modal section-inner">
+  <nav class="mobile-navigation">
+    <ul class="modal-menu reset-list-style">
       <?php wp_nav_menu( array (
         'theme_location' => 'mobile'
       ));
       ?>
-    </nav>
-  </div>
+    </ul>
+  </nav>
 
-</div> <!-- .menu-modal -->
+  </div> <!-- .menu-modal -->
