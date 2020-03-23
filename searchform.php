@@ -11,5 +11,5 @@
     <span class="screen-reader-text"><?php _e( 'Search for:', 'simplyblogging' ); ?></span>
     <input type="search" id="search-form" class="search-field" placeholder="Search &hellip;" value="<?php echo get_search_query(); ?>" name="s" />
   </label>
-  <input type="submit" class="search-submit" value="Search" />
+  <button type="submit" class="search-submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 </form>
