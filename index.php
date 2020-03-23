@@ -15,6 +15,7 @@ get_header();
         </aside>
 
         <main id="main-content" role="main">
+
           <div class="blog-posts">
             <?php
             if( have_posts() ) {
