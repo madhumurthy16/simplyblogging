@@ -42,7 +42,7 @@ get_header();
               );
             }
             else {
-              $archive_subtitle = __( 'We could not find any results for your search. You could give it another try through the search form below.', 'sinplyblogging' );
+              $archive_subtitle = __( 'We could not find any results for your search. You could give it another try through the search form above or browse through the categories on the left.', 'sinplyblogging' );
             }
           }
           elseif ( ! is_home() ) {
@@ -54,78 +54,63 @@ get_header();
             ?>
 
             <header class="archive-header">
-              <div class="archive-header-inner">
+              <!-- <div class="archive-header-inner"> -->
 
               <?php if ( $archive_title ) { ?>
                 <h1 class="archive-title"><?php echo wp_kses_post( $archive_title ); ?></h1>
               <?php } ?>
 
               <?php if ( $archive_subtitle ) { ?>
-                <div class="archive-subtitle"><?php echo wp_kses_post( $archive_subtitle ); ?></div>
+                <div class="intro-text"><?php echo wp_kses_post( $archive_subtitle ); ?></div>
               <?php } ?>
 
-              </div> <!-- .archive-header-inner -->
+              <!-- </div> --> <!-- .archive-header-inner -->
             </header> <!-- .archive-header -->
           <?php } ?>
 
-          <div class="blog-posts">
+          <?php
+          if( have_posts() ) { ?>
+            <div class="blog-posts">
             <?php
-            if( have_posts() ) {
-              $i = 0;
-              while( have_posts() ) {
-                $i++;
-                if( $i > 1 ) {
-                  echo '<hr>';
-                }
-              the_post();
-              ?>
-
-              <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-
-                <figure class="featured-media">
-                  <div>
-                    <?php the_post_thumbnail(); ?>
-                  </div> <!-- .featured-media-inner -->
-                </figure>
-
-                <header>
-                    <p class="categories-list"><?php echo get_the_category_list( ', ' )?></p>
-                    <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                </header>
-
-                <div class="post-inner">
-                  <div class="entry-content">
-                    <?php
-                      the_excerpt();
-                    ?>
-                    <p><a href="<?php the_permalink(); ?>">Continue Reading</a></p>
-                  </div> <!-- .entry-content -->
-                </div> <!-- .post-inner -->
-
-              </article>
-
-            <?php }
-            }
-
-            elseif ( is_search() ) {
-              ?>
-
-              <div class="no-search-results-form">
-
-                <?php
-                get_search_form(
-                  array(
-                    'label' => __( 'search again', 'simplyblogging' ),
-                  )
-                );
-                ?>
-              </div> <!-- .no-search-results-form -->
-
-              <?php
-            }
+            $i = 0;
+            while( have_posts() ) {
+              $i++;
+              if( $i > 1 ) {
+                echo '<hr>';
+              }
+            the_post();
             ?>
 
+            <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+
+              <figure class="featured-media">
+                <div>
+                  <?php the_post_thumbnail(); ?>
+                </div> <!-- .featured-media-inner -->
+              </figure>
+
+              <header>
+                  <p class="categories-list"><?php echo get_the_category_list( ', ' )?></p>
+                  <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+              </header>
+
+              <div class="post-inner">
+                <div class="entry-content">
+                  <?php
+                    the_excerpt();
+                  ?>
+                  <p><a href="<?php the_permalink(); ?>">Continue Reading</a></p>
+                </div> <!-- .entry-content -->
+              </div> <!-- .post-inner -->
+
+            </article>
+
+
+          <?php }
+          }
+          ?>
           </div> <!-- .blog-posts -->
+
         </main> <!-- #main-content -->
 
       </div> <!-- .content-wrapper -->
