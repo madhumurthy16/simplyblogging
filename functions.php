@@ -32,8 +32,8 @@ function simplyblogging_theme_support() {
 
   add_theme_support( 'post-thumbnails' );
 
-  // Set post thumbnail size.
-  set_post_thumbnail_size( 1200, 9999 );
+  // Set post thumbnail size ( Featured Image )
+  set_post_thumbnail_size( 912, 9999 );
 
   // Custom logo
   $logo_width = 120;
