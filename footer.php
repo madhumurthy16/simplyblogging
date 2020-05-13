@@ -50,7 +50,7 @@ $has_sidebar_2 = is_active_sidebar( 'sidebar-2' );
           ?>
           <a href="<?php echo esc_url( home_url( '/' )); ?>"><?php bloginfo( 'name' ); ?></a>
         </p> <!-- .footer-copyright -->
-        <p class="created-by">Created by, <a href="http://madhumurthy.info">Madhu Murthy</a></p>
+        <p class="created-by">Created by, <a href="http://madhumurthy.info" target="_blank">Madhu Murthy</a></p>
     </div> <!-- .footer-credits -->
 
   </div> <!-- .section-inner -->
