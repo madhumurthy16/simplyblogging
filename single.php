@@ -7,6 +7,7 @@
 <div class="container">
   <div class="section-inner">
     <div class="content-wrapper">
+
       <main id="main-content" role="main">
 
         <?php
