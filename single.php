@@ -19,7 +19,7 @@
         <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
           <header class="entry-header">
-              <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+              <h2 class="entry-title"><?php the_title(); ?></h2>
               <p class="categories-list"><?php echo get_the_category_list( ', ' )?></p>
           </header>
 
