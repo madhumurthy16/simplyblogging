@@ -152,8 +152,8 @@ function simplyblogging_sidebar_registration() {
 
 	// Arguments used in all register_sidebar() calls.
 	$shared_args = array(
-		'before_title'  => '<h2 class="widget-title heading-size-3">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 		'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
 		'after_widget'  => '</div></div>',
 	);
