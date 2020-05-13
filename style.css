@@ -228,32 +228,31 @@ h1, h2, h3, h4, h5, h6 {
   margin: 3.5rem 0 2rem;
 }
 
-h1, .heading-size-1 {
+h1 {
   font-size: 3.6rem;
   font-weight: 800;
   line-height: 1.138888889;
 }
 
-h2, .heading-size-2 {
+h2 {
   font-size: 3.2rem;
 }
 
-h3, .heading-size-3 {
+h3 {
   font-size: 2.8rem;
 }
 
-h4, .heading-size-4 {
+h4 {
   font-size: 2.4rem;
 }
 
-h5, .heading-size-5 {
+h5 {
   font-size: 2.1rem;
 }
 
-h6, .heading-size-6 {
+h6 {
   font-size: 1.6rem;
   letter-spacing: 0.03125em;
-  text-transform: uppercase;
 }
 
 p {
@@ -263,18 +262,19 @@ p {
 
 hr {
   border-style: solid;
-  border-width: 0.5rem 0 0 0;
-  border-color: #A7C8F2;
+  border-width: 0.1rem 0 0 0;
+  border-color: #f7f3f3;
   margin-left: 2rem;
 }
 
 a {
   color: #048ABF;
+  color: #F25116;
   text-decoration: none;
 }
 
 a:hover, a:focus {
-  text-decoration: underline;
+  color: #048ABF;
 }
 
 /* Lists ------------------------------------- */
@@ -446,7 +446,8 @@ input[type="button"]:focus,
 input[type="button"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  background: #048ABF;
 }
 
 input[type="search"]:focus {
@@ -549,7 +550,21 @@ section {
 }
 
 
-/* Social Icons ------------------------------ */
+/* Fontawesome Icons ------------------------------ */
+
+.widget_categories a:before,
+.entry-content a:after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+  font-size: 16px;
+}
+
+
 
 
 /* -------------------------------------------------------------------------- */
@@ -596,7 +611,8 @@ section {
 
 .site-title a:hover,
 .site-title a:focus {
-  text-decoration: underline;
+  text-decoration: none;
+  color: #048ABF;
 }
 
 .site-description {
@@ -724,10 +740,33 @@ body:not(.single) article {
   margin: 2rem 0;
 }
 
+.categories-list a {
+  color: #048ABF;
+}
+
+.categories-list a:hover {
+  color: #0D0D0D;
+}
+
 /* Entry Content ----------------------------*/
 
 .entry-content > *:last-child {
   margin-bottom: 0;
+}
+
+.entry-title a {
+  color: #0D0D0D;
+}
+
+.entry-title a:hover {
+  color: #048ABF;
+}
+
+.entry-content a:after {
+  content: "\f4d5";
+  margin-left: 5px;
+  position: relative;
+  top: 3px;
 }
 
 /* Search Results ---------------------------- */
@@ -812,6 +851,7 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
 .widget_recent_entries a,
 .widget_tag_cloud a {
   color: #F25116;
+  opacity: 0.9;
   font-weight: 700;
   text-decoration: none;
 }
@@ -827,8 +867,14 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
 
 /* Widget: Categories ------------------------ */
 
-.widget_categories ul li {
+/*.widget_categories ul li {
    border-bottom: 1px solid #F25116;
+}*/
+
+.widget_categories a:before {
+  content: "\f4d5";
+  content: "\f18c";
+  margin-right: 5px;
 }
 
 /* Widget: Search ---------------------------- */
@@ -892,7 +938,8 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
 
 .footer-credits a:focus,
 .footer-credits a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  color: #048ABF;
 }
 
 .footer-copyright a,
@@ -922,51 +969,44 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
   /* TITLES */
 
   h1,
-  .heading-size-1,
   h2,
-  .heading-size-2,
-  h3,
-  .heading-size-3 {
+  h3 {
     margin: 6rem auto 3rem;
   }
 
   h4,
-  .heading-size-4,
-  h5,
-  .heading-size-5,
-  h6,
-  .heading-size-6 {
+  h6 {
     margin: 4.5rem auto 2.5rem;
   }
 
-  h1,
-  .heading-size-1 {
+  h1 {
     font-size: 6.4rem;
-  }
-
-  h2,
-  .heading-size-2 {
     font-size: 4.8rem;
   }
 
-  h3,
-  .heading-size-3 {
+  h2 {
+    font-size: 4.8rem;
     font-size: 4rem;
   }
 
-  h4,
-  .heading-size-4 {
+  h3 {
+    font-size: 4rem;
     font-size: 3.2rem;
   }
 
-  h5,
-  .heading-size-5 {
+  h4 {
+    font-size: 3.2rem;
     font-size: 2.4rem;
   }
 
-  h6,
-  .heading-size-6 {
+  h5{
+    font-size: 2.4rem;
     font-size: 1.8rem;
+  }
+
+  h6 {
+    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   /* Document Setup ------------------------ */
@@ -1167,6 +1207,7 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
   h1,
   .heading-size-1 {
     font-size: 8.4rem;
+    font-size: 6.4rem;
   }
 
   /* Widgets ------------------------------- */
