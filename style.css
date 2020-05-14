@@ -376,7 +376,7 @@ input[type="email"],
 input[type="search"] {
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: #fff;
+  background: #f7f7f7;
   border-radius: 0;
   border-style: solid;
   border-width: 0.2rem;
@@ -541,8 +541,8 @@ section {
 
 .search-form .search-submit {
   flex-shrink: 0;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .fa-search {
