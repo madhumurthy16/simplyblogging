@@ -766,6 +766,14 @@ body:not(.single) article {
   color: #048ABF;
 }
 
+.entry-content a {
+  border-bottom: 0.1rem solid currentcolor;
+}
+
+.entry-content a:hover {
+  border-bottom: 0;
+}
+
 .entry-content a:after {
   content: "\f4d5";
   margin-left: 5px;
@@ -818,6 +826,10 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
 
 /*	13. Site Pagination
 /* -------------------------------------------------------------------------- */
+
+.pagination-wrapper {
+  margin-top: 2rem;
+}
 
 .pagination .nav-links {
   display: flex;
@@ -1171,6 +1183,10 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
   /* Site Pagination ----------------------- */
 
   /* Display the full text for Newer and Older texts */
+
+  .pagination-wrapper {
+    margin-top: 3rem;
+  }
 
   .nav-short {
     display: inline;
