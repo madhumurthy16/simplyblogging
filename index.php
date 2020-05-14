@@ -110,11 +110,15 @@ get_header();
         ?>
         </div> <!-- .blog-posts -->
 
+        <?php get_template_part( 'template-parts/pagination' ); ?>
+
       </main> <!-- #main-content -->
 
     </div> <!-- .content-wrapper -->
   </div> <!-- .section-inner -->
 </div> <!-- .container -->
+
+
 
 <?php
   get_footer();
