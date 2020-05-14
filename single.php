@@ -39,6 +39,7 @@
           </div> <!-- .post-inner -->
 
         </article>
+
       </main> <!-- #site-content -->
 
       <aside id="sidebar-right">
