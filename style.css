@@ -816,6 +816,39 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
 
 /* -------------------------------------------------------------------------- */
 
+/*	13. Site Pagination
+/* -------------------------------------------------------------------------- */
+
+.pagination .nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: -1.5rem 0 0 -2.5rem;
+  width: calc(100% + 2.5rem);
+}
+
+.nav-links > * {
+  margin: 1.5rem 0 0 2.5rem;
+}
+
+.nav-links .placeholder {
+  display: none;
+  visibility: hidden;
+}
+
+/*.pagination a:focus,
+.pagination a:hover {
+  text-decoration: underline;
+}*/
+
+.nav-short {
+  display: none;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
 /*	15.	Widgets
 /* -------------------------------------------------------------------------- */
 
@@ -1135,6 +1168,24 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
     margin-top: 2.5rem;
   }
 
+  /* Site Pagination ----------------------- */
+
+  /* Display the full text for Newer and Older texts */
+
+  .nav-short {
+    display: inline;
+  }
+
+  .pagination .nav-links {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin: -2.5rem 0 0 -4rem;
+  }
+
+  .nav-links > * {
+    margin: 2.5rem 0 0 4rem;
+  }
+
   /* Site Footer --------------------------- */
 
   #site-footer {
@@ -1200,6 +1251,37 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
     /*flex: 1 80%;*/
     flex: 4;
   }
+}
+
+@media ( min-width: 1000px ) {
+
+  /* Site Pagination ---------------------- */
+
+  .pagination .nav-links {
+    justify-content: space-between;
+    margin: 0;
+    width: 100%
+  }
+
+  .nav-links > * {
+    margin: 0 2rem;
+  }
+
+  .pagination .next,
+  .pagination .prev {
+    display: block;
+  }
+
+  .pagination .prev {
+    margin: 0 auto 0 0;
+  }
+
+  .pagination .next {
+    text-align: right;
+    margin: 0 0 0 auto;
+  }
+
+
 }
 
 @media ( min-width: 1220px ) {
