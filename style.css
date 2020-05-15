@@ -822,6 +822,35 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
   padding-top: 2rem;
 }
 
+/* Single Pagination ------------------------- */
+
+.pagination-single {
+  font-size: 1.6rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  padding-bottom: 5rem;
+  border-bottom: 0.1rem solid #dedfdf;
+}
+
+.pagination-single-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.pagination-single a {
+  display: flex;
+  font-weight: 600;
+  letter-spacing: -0.0275em;
+}
+
+.pagination-single a + a {
+  margin-top: 1rem;
+}
+
+.pagination-single a .arrow {
+  margin-right: 1rem;
+}
+
 /* -------------------------------------------------------------------------- */
 
 /*	13. Site Pagination
@@ -1202,6 +1231,43 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
     margin: 2.5rem 0 0 4rem;
   }
 
+  /* Post: Single -------------------------- */
+
+  /* SINGLE PAGINATION */
+
+  .pagination-single {
+    font-size: 2.1rem;
+    margin-top: 5rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border: 0;
+  }
+
+  .pagination-single-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .pagination-single.only-next .pagination-single-inner {
+    justify-content: flex-end;
+  }
+
+  .pagination-single a + a {
+    margin: 0 0 0 4rem;
+  }
+
+  .pagination-single a .arrow {
+    margin: 0 2rem 0 0;
+  }
+
+  .pagination-single .next-post {
+    text-align: right;
+  }
+
+  .pagination-single .next-post .arrow {
+    margin: 0 0 0 2rem;
+  }
+
   /* Site Footer --------------------------- */
 
   #site-footer {
@@ -1212,7 +1278,7 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
   /* FOOTER WIDGETS */
 
   .footer-widgets-outer-wrapper {
-      padding: 8rem 0;
+      padding: 5rem 0;
   }
 
   .footer-widgets-wrapper {
