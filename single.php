@@ -40,6 +40,8 @@
 
         </article>
 
+      <?php get_template_part( 'template-parts/navigation' ); ?>
+      
       </main> <!-- #site-content -->
 
       <aside id="sidebar-right">
