@@ -80,6 +80,8 @@ add_action( 'after_setup_theme', 'simplyblogging_theme_support');
  * Include required files.
  */
 
+ // Custom comment walker
+require get_template_directory() . '/classes/class-simplyblogging-walker-comment.php';
 
 /**
 * Register and Enqueue Styles
