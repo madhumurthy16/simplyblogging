@@ -29,8 +29,8 @@ if( ! class_exists(SimplyBlogging_Walker_Comment) ) {
               <?php
                 $comment_author_url = get_comment_author_url( $comments );
                 $comment_author     = get_comment_author( $comments );
-                $avator             = get_avatar( $comments, $args['avatar_size'] );
-                if( 0 !=== $args['avatar_size'] ) {
+                $avatar             = get_avatar( $comments, $args['avatar_size'] );
+                if( 0 !== $args['avatar_size'] ) {
                   if ( empty( $comment_author_url ) ) {
                     echo wp_kses_post( $avatar );
                   } else {
@@ -52,15 +52,27 @@ if( ! class_exists(SimplyBlogging_Walker_Comment) ) {
             </div> <!-- .comment-author -->
 
             <div class="comment-metadata">
-              <a href="<?php echo esc_url( get_comment_link( $comments, $args ) ); ?>">
+                <a href="<?php echo esc_url( get_comment_link( $comment, $args )); ?>">
+                  <?php
+                  $comment_timestamp = sprintf( __('%1$s at %2$s', 'simplyblogging' ), get_comment_date( '', $comment ), get_comment_time() );
+                  ?>
+                  <time datetime="<?php echo comment_time( 'c' ); ?>" title="<?php echo esc_attr( $comment_timestamp ); ?>">
+                  <?php echo esc_html( $comment_timestamp ); ?>
+                </a>
+                <?php
+                  if( get_edit_comment_link() ) {
+                    echo ' <span aria-hidden="true">&bull;</span> <a class="comment-edit-link" href="'. esc_url( get_edit_comment_link() ) . '">' . __( 'Edit', 'simplyblogging' ) . '</a>';
+                  }
+                ?>
 
-              </a>
             </div> <!-- .comment-metadata -->
+
           </footer> <!-- .comment-meta -->
 
           <div class="comment-content entry-content">
 
             <?php
+
               comment_text();
 
               if( '0' === $comment->comment_approved ) {
@@ -71,17 +83,47 @@ if( ! class_exists(SimplyBlogging_Walker_Comment) ) {
             ?>
           </div> <!-- .comment-content -->
 
-          
+          <?php
+
+            $comment_reply_link = get_comment_reply_link(
+              array_merge(
+                $args,
+                array(
+                  'add_below' => 'div-content',
+                  'depth'     => $depth,
+                  'max_depth' => $args['max_depth'],
+                  'before'    => '<span class="comment-reply">',
+                  'after'     => '</span>',
+                )
+              )
+            );
+
+            $by_post_author = simplyblogging_is_comment_by_post_author( $comment );
+
+            if( $comment_reply_link || $by_post_author ) {
+                ?>
+
+                <footer class="comment-footer-meta">
+
+                  <?php
+                  if( $comment_reply_link ) {
+                      echo $comment_reply_link;
+                  }
+                  if( $by_post_author ) {
+                    echo '<span class="by-post-author">' . __( 'By Post Author', 'simplybloggig' ) . '</span>';
+                  }
+                 ?>
+
+                </footer> <!-- .comment-footer-meta -->
+
+                <?php
+            }
+            ?>
+
+
         </article> <!-- .comment-body -->
-    }
-  }
-}
 
-
-
-
-
-
-
-
-?>
+        <?php
+     }
+   }
+ }
