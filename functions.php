@@ -3,11 +3,13 @@
 /**
  * Table of Contents:
  * Theme Support
+ * Required Files
  * Register Styles
  * Register Scripts
  * Register Menus
  * Register Sidebars
  * Custom excerpt length
+ * Custom comment form fields order
  */
 
 /**
@@ -79,6 +81,8 @@ add_action( 'after_setup_theme', 'simplyblogging_theme_support');
  * REQUIRED FILES
  * Include required files.
  */
+
+ require get_template_directory() . '/inc/template-tags.php';
 
  // Custom comment walker
 require get_template_directory() . '/classes/class-simplyblogging-walker-comment.php';
@@ -218,3 +222,18 @@ function simplyblogging_custom_excerpt_length( $length ) {
 }
 
 add_filter( 'excerpt_length', 'simplyblogging_custom_excerpt_length', 999 );
+
+// Remove custom comment form fields and reorder fields
+
+function simplyblogging_comment_fields_custom_order( $fields ) {
+  $comment_field = $fields['comment'];
+  // Remove fields
+  unset( $fields['comment']);
+  unset( $fields['url']);
+  unset( $fields['cookies']);
+  // Add comment field to the end of the form
+  $fields['comment'] = $comment_field;
+  return $fields;
+}
+
+add_filter( 'comment_form_fields', 'simplyblogging_comment_fields_custom_order' );
