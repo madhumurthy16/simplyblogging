@@ -31,7 +31,6 @@ if( $comments ) {
         printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'simplyblogging' ), esc_html( get_the_title() ) );
       } else {
         echo sprintf(
-
           _nx(
             '%1$s reply on &ldquo;%2$s&rdquo;',
             '%1$s replies on &ldquo;%2$s&rdquo;',
@@ -66,7 +65,7 @@ if( $comments ) {
           'end_size'  => 0,
           'mid-size'  => 0,
           'next_text' => __( 'Newer Comments', 'simplyblogging' ) . ' <span aria-hidden="true">&rarr;</span>',
-          'prev_text' => '<span aria-hidden="true">&rarr;</span> ' . __( 'Older Comments', 'simplyblogging' ),
+          'prev_text' => '<span aria-hidden="true">&larr;</span> ' . __( 'Older Comments', 'simplyblogging' ),
         )
       );
 
@@ -79,7 +78,7 @@ if( $comments ) {
         }
         ?>
 
-        <nav class="comments-pagination pagination <?php echo $pagination_classes; ?>" aria-label="<?php esc_att_e( 'Comments', 'simplyblogging' ); ?>">
+        <nav class="comments-pagination pagination <?php echo $pagination_classes; ?>" aria-label="<?php esc_attr_e( 'Comments', 'simplyblogging' ); ?>">
           <?php echo wp_kses_post( $comment_pagination ); ?>
         </nav>
 
@@ -102,9 +101,9 @@ if( comments_open() || pings_open() ) {
 
   comment_form(
     array(
-        'title_reply_before'   => '<h2 id="reply-title" class="comment-reply-title">',
-        'title_repy_after'     => '</h2>',
-        'comment_notes_before' => '',
+        'title_reply_before'     => '<h2 id="reply-title" class="comment-reply-title">',
+        'title_repy_after'       => '</h2>',
+        //'comment_notes_before' => '',
     )
   );
 
@@ -118,8 +117,7 @@ if( comments_open() || pings_open() ) {
 
   <div class="comment-respond" id="respond">
     <p class="comments-closed"><?php _e( 'Comments are closed.', 'simplyblogging' ); ?></p>
-  </div>
-
+  </div> <!-- #respond -->
   <?php
 
 }
