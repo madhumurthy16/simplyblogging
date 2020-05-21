@@ -227,12 +227,14 @@ add_filter( 'excerpt_length', 'simplyblogging_custom_excerpt_length', 999 );
 
 function simplyblogging_comment_fields_custom_order( $fields ) {
   $comment_field = $fields['comment'];
+  $cookies_field = $fields['cookies'];
   // Remove fields
   unset( $fields['comment']);
   unset( $fields['url']);
   unset( $fields['cookies']);
   // Add comment field to the end of the form
   $fields['comment'] = $comment_field;
+  $fields['cookies'] = $cookies_field;
   return $fields;
 }
 
