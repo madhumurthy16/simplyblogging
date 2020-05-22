@@ -897,13 +897,6 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
 /*	12. Comments
 /* -------------------------------------------------------------------------- */
 
-/* Comment Headers ----------------------------- */
-
-/*.comments-wrapper {
-  margin-top: 3rem;
-  border: 1px solid #f6f6f6;
-}*/
-
 /* Comment Item ----------------------------- */
 
 /* COMMENT HEADER */
@@ -1029,7 +1022,7 @@ div.comment:first-of-type {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 6rem;
+  margin-top: 4rem;
   text-align: center;
 }
 
@@ -1055,8 +1048,23 @@ div.comment:first-of-type {
   text-align: right;
 }*/
 
-.comments + hr {
-  margin: 4rem 0;
+.comments-wrapper + hr {
+  height: 0.1rem;
+  background-color: #dedfdf;
+  overflow: visible;
+  border: 0;
+}
+
+.comment-form-separator {
+  display: block;
+}
+
+.hide-separator {
+  display: none;
+}
+
+.comments-wrapper + hr, .comments + hr {
+  margin: 3rem 0;
 }
 
 /* Comment Respond ( Post a comment )---------------------------- */
@@ -1094,10 +1102,6 @@ div.comment:first-of-type {
   margin-left: 0;
   margin-right: 0;
 }
-
-/*.comment-respond p:not(.comment-notes) {
-  max-width: 58rem;
-}*/
 
 .comment-form-cookies-consent {
   align-items: baseline;
@@ -1145,6 +1149,10 @@ div.comment:first-of-type {
 .comments .comment-respond .comment-notes,
 .comments .comment-respond .logged-in-as {
   text-align: left;
+}
+
+.comment-reply-title {
+  margin: 0 0 4rem 0;
 }
 
 .comment-reply-title small {
@@ -1421,9 +1429,9 @@ div.comment:first-of-type {
 
   /* Helper Classes ------------------------- */
 
-  hr {
+  /*hr {
     display: none;
-  }
+  }*/
 
   /* SECTIONS */
 
@@ -1575,12 +1583,17 @@ div.comment:first-of-type {
 
   /* Comments ------------------------------ */
 
-  /*.comments-wrapper {
-    margin-top: 5rem;
-  }*/
+  .hide-separator {
+    display: none;
+  }
 
+  .comments-wrapper + hr {
+    display: none;
+  }
+
+  .comments-wrapper + hr,
   .comments + hr {
-    display: block;
+    margin: 4rem 0;
   }
 
   .comment-reply-title {
@@ -1634,7 +1647,7 @@ div.comment:first-of-type {
   }
 
   .comments-pagination {
-    margin-top: 5rem;
+    margin-top: 6rem;
   }
 
   /* PINGBACKS & TRACKBACKS */
