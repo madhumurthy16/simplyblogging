@@ -93,7 +93,7 @@ require get_template_directory() . '/classes/class-simplyblogging-walker-comment
 function simplyblogging_register_styles() {
   $theme_version = wp_get_theme()->get( 'version' );
   wp_enqueue_style( 'custom-google-fonts', '//fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700,700i,800' );
-  wp_enqueue_style('font-awesome', '//use.fontawesome.com/releases/v5.8.1/css/all.css');
+  wp_enqueue_style('font-awesome', '//use.fontawesome.com/releases/v5.13.0/css/all.css');
   wp_enqueue_style( 'simplyblogging_style', get_stylesheet_uri(), array(), $theme_version );
 }
 
@@ -104,7 +104,12 @@ add_action( 'wp_enqueue_scripts', 'simplyblogging_register_styles' );
  */
 
  function simplyblogging_register_scripts() {
+
    $theme_version = wp_get_theme()->get( 'version' );
+
+   if( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+     wp_enqueue_script( 'comment-reply' );
+   }
    wp_enqueue_script( 'simplyblogging-js', get_template_directory_uri() . '/assets/js/index.js', array('jquery'), $theme_version, true );
  }
 
