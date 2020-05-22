@@ -89,7 +89,7 @@ if( ! class_exists(SimplyBlogging_Walker_Comment) ) {
               array_merge(
                 $args,
                 array(
-                  'add_below' => 'div-content',
+                  'add_below' => 'div-comment',
                   'depth'     => $depth,
                   'max_depth' => $args['max_depth'],
                   'before'    => '<span class="comment-reply">',
