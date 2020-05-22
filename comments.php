@@ -21,7 +21,7 @@ if( $comments ) {
     $comments_number = absint( get_comments_number() );
     ?>
 
-    <div class="comments-header section-inner small max-percentage">
+    <div class="comments-header">
 
       <h2 class="comment-reply-title">
       <?php
@@ -48,7 +48,7 @@ if( $comments ) {
 
   </div> <!-- .comments-header -->
 
-  <div class="comments-inner section-inner thin max-percentage">
+  <div class="comments-inner">
 
     <?php
       wp_list_comments(
@@ -103,7 +103,6 @@ if( comments_open() || pings_open() ) {
     array(
         'title_reply_before'     => '<h2 id="reply-title" class="comment-reply-title">',
         'title_repy_after'       => '</h2>',
-        //'comment_notes_before' => '',
     )
   );
 
