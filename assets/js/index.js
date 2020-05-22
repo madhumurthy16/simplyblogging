@@ -1,6 +1,21 @@
-/* Modal Menu for Mobile Navigation */
-
 var $j = jQuery.noConflict();
+
+
+var hr = $j(".comment-form-separator");
+var replyLink = $j(".comment-reply-link");
+var cancelLink = $j("#cancel-comment-reply-link")
+
+/* Remove comment form separator (<hr>) when comment reply is clicked */
+replyLink.on('click', function() {
+    hr.addClass("hide-separator");
+  });
+
+/* Add comment form separator (<hr>) when cancel reply is clicked */
+cancelLink.on('click', function() {
+  hr.removeClass("hide-separator");
+});
+
+/* Modal Menu for Mobile Navigation */
 
 class MobileMenu {
   constructor() {
