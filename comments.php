@@ -96,7 +96,7 @@ if( $comments ) {
 if( comments_open() || pings_open() ) {
 
   if( $comments ) {
-    echo '<hr />';
+    echo '<hr class="comment-form-separator" />';
   }
 
   comment_form(
@@ -117,6 +117,7 @@ if( comments_open() || pings_open() ) {
   <div class="comment-respond" id="respond">
     <p class="comments-closed"><?php _e( 'Comments are closed.', 'simplyblogging' ); ?></p>
   </div> <!-- #respond -->
+
   <?php
 
 }
