@@ -358,6 +358,46 @@ label {
 	margin: 0 0 0.5rem 0;
 }
 
+label.inline,
+input[type="checkbox"] + label {
+  display: inline;
+  font-weight: 400;
+  margin-left: 0.5rem;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  margin: 0;
+  width: 1.5rem;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  background: #fff;
+  border-radius: : 0;
+  border: 0.1rem solid #dcd7ca;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked:before {
+  content: '\f00c';
+  position: absolute;
+  display: inline-block;
+  margin: -0.1875rem 0 0 -0.25rem;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  top: 3px;
+  left: 2px;
+}
+
 input,
 textarea,
 button {
@@ -374,7 +414,8 @@ textarea {
 input[type="text"],
 input[type="password"],
 input[type="email"],
-input[type="search"] {
+input[type="search"],
+textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   background: #f7f7f7;
@@ -434,7 +475,7 @@ input[type="submit"] {
   line-height: 1.25;
   margin: 0;
   opacity: 1;
-  padding: 0.6rem 1rem;
+  padding: 1em 1.22em;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -542,8 +583,7 @@ section {
 
 .search-form .search-submit {
   flex-shrink: 0;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 0.6rem 2rem;
 }
 
 .fa-search {
@@ -827,9 +867,9 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
 
 .pagination-single {
   font-size: 1.6rem;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-  padding-bottom: 5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
   border-bottom: 0.1rem solid #dedfdf;
 }
 
@@ -859,15 +899,10 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
 
 /* Comment Headers ----------------------------- */
 
-.comments-wrapper {
+/*.comments-wrapper {
   margin-top: 3rem;
   border: 1px solid #f6f6f6;
-}
-
-.comment-reply-title {
-  margin: 0 0 4rem 0;
-  text-align: center;
-}
+}*/
 
 /* Comment Item ----------------------------- */
 
@@ -1020,6 +1055,10 @@ div.comment:first-of-type {
   text-align: right;
 }*/
 
+.comments + hr {
+  margin: 4rem 0;
+}
+
 /* Comment Respond ( Post a comment )---------------------------- */
 
 .comment-respond::after {
@@ -1033,8 +1072,7 @@ div.comment:first-of-type {
   color: #6d6d6d;
   font-size: 1.6rem;
   line-height: 1.4;
-  margin: -3rem 0 4rem 0;
-  text-align: center;
+  /*margin: -3rem 0 4rem 0;*/
 }
 
 .comment-respond .comment-notes a,
@@ -1076,7 +1114,7 @@ div.comment:first-of-type {
 
 .comment-respond input[type="checkbox"] + label {
   font-size: 1.5rem;
-  line-: 1.25;
+  line-height: 1.25;
 }
 
 .comment-respond input[type="text"],
@@ -1109,6 +1147,13 @@ div.comment:first-of-type {
   text-align: left;
 }
 
+.comment-reply-title small {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0 0;
+  white-space: nowrap;
+}
 
 
 /* -------------------------------------------------------------------------- */
@@ -1498,9 +1543,9 @@ div.comment:first-of-type {
   .pagination-single {
     font-size: 2.1rem;
     margin-top: 5rem;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border: 0;
+    margin-bottom: 5rem;
+    padding-bottom: 5rem;
+    /*border: 0;*/
   }
 
   .pagination-single-inner {
@@ -1526,6 +1571,105 @@ div.comment:first-of-type {
 
   .pagination-single .next-post .arrow {
     margin: 0 0 0 2rem;
+  }
+
+  /* Comments ------------------------------ */
+
+  /*.comments-wrapper {
+    margin-top: 5rem;
+  }*/
+
+  .comments + hr {
+    display: block;
+  }
+
+  .comment-reply-title {
+    margin: 0 0 4.6rem 0;
+  }
+
+  .comment-respond p.comment-notes,
+  .coment-respond p.logged-in-as {
+    font-size: 1.8rem;
+    letter-spacing: -0.025em;
+    margin: -2.5rem 0 4.4rem 0;
+  }
+
+  .comments .comment,
+  .comments .pingback,
+  .comments .trackback,
+  /*.comments .review*/ {
+    padding-top: 5rem;
+  }
+
+  div.comment:first-of-type {
+    margin-top: 5rem;
+  }
+
+  .comment-meta {
+    margin-bottom: 2rem;
+    min-height: 6rem;
+    padding: 0.3rem 0 0 7.5rem;
+  }
+
+  .comment-meta .avatar {
+    display: block;
+    height: 6rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6rem;
+  }
+
+  .comment-author {
+    font-size: 2.4rem;
+  }
+
+  .comment-metadata {
+    font-size: 1.6rem;
+    margin-top: 0.8rem;
+  }
+
+  .comment-footer-meta {
+    margin-top: 2.5rem;
+  }
+
+  .comments-pagination {
+    margin-top: 5rem;
+  }
+
+  /* PINGBACKS & TRACKBACKS */
+
+  .pingback .comment-body {
+    padding: 0;
+  }
+
+  /* COMMENT RESPOND */
+
+  .comment-respond p {
+    margin-bottom: 2.5rem;
+  }
+
+  .comment-form p.logged-in-as {
+    margin: -2.5rem 0 4.4rem 0;
+  }
+
+  .comment-respond .comment-form-author,
+	.comment-respond .comment-form-email {
+		float: left;
+		width: calc(50% - 1rem);
+	}
+
+  .comment-respond .comment-form-email {
+    margin-left: 2rem;
+  }
+
+  .comments .comment-respond {
+    padding: 5rem 0 0;
+  }
+
+  .comment-reply-title small {
+    display: inline;
+    margin: 0 0 0 0.5rem;
   }
 
   /* Site Footer --------------------------- */
