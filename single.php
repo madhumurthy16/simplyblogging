@@ -55,6 +55,8 @@
 
         </div> <!-- .comments-wrapper -->
 
+        <hr>
+
         <?php
       }
       ?>
