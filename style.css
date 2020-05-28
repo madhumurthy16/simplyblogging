@@ -685,9 +685,9 @@ section {
    visibility: hidden;
    position: absolute;
    background-color: rgba(242, 81, 22, 0.8);
+   background-color: #f7f7f7;
    left: 0;
    right: 0;
-   /*top: -20px;*/
    opacity: 0;
    z-index: 100;
    -webkit-transform: translateY(-20%);
@@ -696,21 +696,18 @@ section {
    transition: opacity .3s ease-out, visibility .3s ease-out, transform .3s ease-out;
    transition: opacity .3s ease-out, visibility .3s ease-out, transform .3s ease-out, -webkit-transform .3s ease-out;
    padding: 30px;
+   padding-left: 0;
  }
 
  .site-header-menu-trigger {
    color: #048ABF;
    color: inherit;
    cursor: pointer;
-   font-size: 2rem;
-   /*position: absolute;*/
-   z-index: 10;
-   /*top: 70px;
-   right: 46px;*/
+   font-size: 2.5rem;
  }
 
  .fa-window-close:before {
-    color: #6d6d6d;
+    color: inherit;
   }
 
  .site-header-menu-active {
@@ -723,7 +720,6 @@ section {
  .menu-modal ul {
    display: flex;
    flex-direction: column;
-   align-items: center;
    justify-content: center;
  }
 
@@ -736,15 +732,14 @@ section {
  }
 
  .menu-modal ul li a {
-   color: #fff;
+   color: #F25116;
    font-size: 2rem;
    font-weight: 700;
  }
 
  .menu-modal ul li a:hover {
-   color: #0d0d0d;
+   color: #048ABF;
  }
-
 
 
 /* -------------------------------------------------------------------------- */
@@ -1485,6 +1480,10 @@ div.comment:first-of-type {
     padding: 0 4rem;
   }
   /* Menu Modal ---------------------------- */
+
+  .menu-modal {
+     visibility: hidden;
+   }
 
   .site-header-menu-trigger {
      display: none;
