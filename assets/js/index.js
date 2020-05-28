@@ -35,3 +35,9 @@ class MobileMenu {
 }
 
 var mobileMenu = new MobileMenu();
+
+/* Add Social Icons to Social Menu Links */
+
+var twitterLink = $j('.twitter-link').children().text('').append('<i class="fab fa-twitter-square"></i>');
+var facebookLink = $j('.facebook-link').children().text('').append('<i class="fab fa-facebook-square"></i>');
+var instagramLink = $j(".instagram-link").children().text('').append('<i class="fab fa-instagram-square"></i>');
