@@ -1319,6 +1319,33 @@ div.comment:first-of-type {
   color: #048ABF;
 }
 
+/* Widget: Social Menu ----------------------- */
+
+.menu-social-menu-container ul {
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+.menu-social-menu-container ul li {
+  margin-top: 0;
+  margin-right: 10px;
+}
+
+.menu-social-menu-container ul.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu-social-menu-container ul.menu li a {
+  font-size: 3rem;
+}
+
+.menu-social-menu-container ul.menu li a:hover {
+  color: #048ABF;
+}
+
+
+
 /* -------------------------------------------------------------------------- */
 
 /*	16. Site Footer
