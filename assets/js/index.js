@@ -1,22 +1,6 @@
 var $j = jQuery.noConflict();
 
-
-var hr = $j(".comment-form-separator");
-var replyLink = $j(".comment-reply-link");
-var cancelLink = $j("#cancel-comment-reply-link")
-
-/* Remove comment form separator (<hr>) when comment reply is clicked */
-replyLink.on('click', function() {
-    hr.addClass("hide-separator");
-  });
-
-/* Add comment form separator (<hr>) when cancel reply is clicked */
-cancelLink.on('click', function() {
-  hr.removeClass("hide-separator");
-});
-
-/* Modal Menu for Mobile Navigation */
-
+// Modal Menu for Mobile Navigation
 class MobileMenu {
   constructor() {
     this.menu = $j(".menu-modal");
@@ -36,8 +20,22 @@ class MobileMenu {
 
 var mobileMenu = new MobileMenu();
 
-/* Add Social Icons to Social Menu Links */
-
+//Add Social Icons to Social Menu Links
 var twitterLink = $j('.twitter-link').children().text('').append('<i class="fab fa-twitter-square"></i>');
 var facebookLink = $j('.facebook-link').children().text('').append('<i class="fab fa-facebook-square"></i>');
 var instagramLink = $j(".instagram-link").children().text('').append('<i class="fab fa-instagram-square"></i>');
+
+// Add/Remove comment form separator (<hr>)
+var hr = $j(".comment-form-separator");
+var replyLink = $j(".comment-reply-link");
+var cancelLink = $j("#cancel-comment-reply-link")
+
+//Remove comment form separator (<hr>) when comment reply is clicked
+replyLink.on('click', function() {
+    hr.addClass("hide-separator");
+  });
+
+// Add comment form separator (<hr>) when cancel reply is clicked 
+cancelLink.on('click', function() {
+  hr.removeClass("hide-separator");
+});

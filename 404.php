@@ -6,6 +6,7 @@
 
 get_header();
 ?>
+
 <div class="container">
   <div class="section-inner">
     <div class="content-wrapper">

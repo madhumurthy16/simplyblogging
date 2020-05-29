@@ -52,6 +52,7 @@ if( ! class_exists(SimplyBlogging_Walker_Comment) ) {
             </div> <!-- .comment-author -->
 
             <div class="comment-metadata">
+
                 <a href="<?php echo esc_url( get_comment_link( $comment, $args )); ?>">
                   <?php
                   $comment_timestamp = sprintf( __('%1$s at %2$s', 'simplyblogging' ), get_comment_date( '', $comment ), get_comment_time() );
@@ -81,6 +82,7 @@ if( ! class_exists(SimplyBlogging_Walker_Comment) ) {
                 <?php
               }
             ?>
+            
           </div> <!-- .comment-content -->
 
           <?php
