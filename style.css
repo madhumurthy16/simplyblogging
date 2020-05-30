@@ -136,7 +136,7 @@ body {
 /* Base Transitions -------------------------- */
 
 a {
-  transition: all 0.15s linear;
+  transition: color 0.15s linear;
 }
 
 /* Screen Reader Text  ----------------------- */
@@ -345,6 +345,11 @@ img {
   display: block;
   height: auto;
   max-width: 100%;
+  transition: opacity 0.4s;
+}
+
+img:hover {
+  opacity: 0.8;
 }
 
 /* GALLERIES */
@@ -489,7 +494,8 @@ input[type="button"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:hover {
   text-decoration: none;
-  background: #048ABF;
+  /*background: #048ABF;*/
+  opacity: 0.85;
 }
 
 input[type="search"]:focus {
@@ -1020,12 +1026,14 @@ div.comment:first-of-type {
   color: #fff;
   display: block;
   padding: 0.7rem;
+  opacity: 1;
+  transition: opacity 0.15s linear;
 }
 
 .comment-reply-link:focus,
 .comment-reply-link:hover {
-  background-color: #048ABF;
   color: #fff;
+  opacity: 0.85;
 }
 
 .comment-footer-meta .by-post-author {
