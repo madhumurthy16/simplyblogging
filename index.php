@@ -83,8 +83,11 @@ get_header();
           <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
             <figure class="featured-media">
-              <div>
+              <div class="featured-media-image">
                 <?php the_post_thumbnail(); ?>
+                <div class="image-overlay">
+                  <a class="image-overlay-link" href="<?php the_permalink(); ?>">Read Post</a>
+                </div>
               </div> <!-- .featured-media-inner -->
             </figure>
 
@@ -98,7 +101,7 @@ get_header();
                 <?php
                   the_excerpt();
                 ?>
-                <p><a href="<?php the_permalink(); ?>">Continue Reading</a></p>
+                <p><a class="read-more-link" href="<?php the_permalink(); ?>">Continue Reading</a></p>
               </div> <!-- .entry-content -->
             </div> <!-- .post-inner -->
 
