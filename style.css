@@ -345,12 +345,14 @@ img {
   display: block;
   height: auto;
   max-width: 100%;
-  transition: opacity 0.4s;
+  /*transition: opacity 0.4s;*/
 }
 
-img:hover {
+/*img:hover {
   opacity: 0.8;
-}
+}*/
+
+
 
 /* GALLERIES */
 
@@ -600,7 +602,7 @@ section {
 /* Fontawesome Icons ------------------------------ */
 
 .widget_categories a:before,
-.entry-content a:after {
+.entry-content .read-more-link:after {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -834,22 +836,30 @@ body:not(.single) article {
   color: #048ABF;
 }
 
-.entry-content a {
-  border-bottom: 0.1rem solid currentcolor;
-}
-
-.entry-content a:hover {
-  border-bottom: 0;
-}
-
-.entry-content a:after {
+.entry-content .read-more-link::after {
   content: "\f30b";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   margin-left: 5px;
   position: relative;
   top: 2px;
+  left: 0;
+  transition: left 0.3s ease-out;
 }
+
+.entry-content .read-more-link {
+  border-bottom: 0.1rem solid currentcolor;
+}
+
+.entry-content .read-more-link:hover {
+  border-bottom: 0;
+}
+
+.read-more-link:focus::after,
+.read-more-link:hover::after{
+  left: 2%;
+}
+
 
 /* Search Results ---------------------------- */
 
@@ -878,6 +888,51 @@ body.single .featured-media {
 .featured-media {
   margin-top: 5rem;
   position: relative;
+}
+
+.featured-media-image {
+  position: relative;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,.65);
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.image-overlay:hover {
+  opacity: 1;
+}
+
+.image-overlay-link {
+  color: #fff;
+  background: rgba(242,81,22,0.5);
+  padding: 2rem;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity .5s .2s, background .5s .3s, border .5s 0s, color .5s .3s;
+}
+
+.image-overlay:hover .image-overlay-link {
+  opacity: 1;
+}
+
+.image-overlay-link:focus,
+.image-overlay-link:hover {
+  color: #F25116;
+  background: transparent;
+  border: 0.1rem solid #F25116;
 }
 
 body:not(.single) #main-content .blog-posts article:first-of-type > figure {
