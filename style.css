@@ -345,14 +345,7 @@ img {
   display: block;
   height: auto;
   max-width: 100%;
-  /*transition: opacity 0.4s;*/
 }
-
-/*img:hover {
-  opacity: 0.8;
-}*/
-
-
 
 /* GALLERIES */
 
@@ -640,6 +633,20 @@ section {
   text-align: left;
 }
 
+.site-icon {
+  margin-bottom: 0.4em;
+  transition: transform 0.5s;
+}
+.site-icon:hover {
+  /*transform: rotate(-5deg);*/
+  transform: skewX(10deg);
+}
+
+.site-icon i {
+  font-size: 22px;
+  color: #6d6d6d;
+}
+
 .site-title,
 .site-description {
   margin: 0;
@@ -896,6 +903,15 @@ body.single .featured-media {
   overflow: hidden;
 }
 
+.featured-media-image img {
+  transition: transform 0.5s;
+  /*transform-origin: 0 0;*/
+}
+
+.featured-media-image:hover img {
+  transform: scale(1.2);
+}
+
 .image-overlay {
   position: absolute;
   top: 0;
@@ -921,7 +937,7 @@ body.single .featured-media {
   padding: 2rem;
   text-decoration: none;
   opacity: 0;
-  transition: opacity .5s .2s, background .5s .3s, border .5s 0s, color .5s .3s;
+  transition: opacity .5s .2s, background .5s .2s, border .5s ease-in .2s, color .5s .3s;
 }
 
 .image-overlay:hover .image-overlay-link {
@@ -972,9 +988,20 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
   margin-top: 1rem;
 }
 
-.pagination-single a .arrow {
+.pagination-single .previous-post .arrow {
   margin-right: 1rem;
 }
+
+/*.pagination-single  .next-post .arrow {
+   position: relative;
+   left: 0;
+   transition: left 0.5s;
+
+}
+
+.pagination-single .next-post:hover .arrow {
+  left: -10px;
+}*/
 
 /* -------------------------------------------------------------------------- */
 
