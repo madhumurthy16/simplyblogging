@@ -25,8 +25,10 @@
           </header>
 
           <figure class="featured-media">
-            <div>
+            <div class="featured-media-image">
               <?php the_post_thumbnail(); ?>
+              <div class="image-overlay">
+              </div>
             </div> <!-- .featured-media-inner -->
           </figure>
 
