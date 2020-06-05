@@ -645,8 +645,7 @@ section {
 }
 
 .site-icon i {
-  font-size: 22px;
-  color: #6d6d6d;
+  display: none;
 }
 
 .site-title,
@@ -1574,6 +1573,10 @@ div.comment:first-of-type {
     font-size: 1.6rem;
   }
 
+  h2.entry-title {
+    font-size: 3.6rem;
+  }
+
   /* Document Setup ------------------------ */
 
   .container {
@@ -1622,6 +1625,13 @@ div.comment:first-of-type {
     text-align: center;
     padding: 0 4rem;
   }
+
+  .site-icon i {
+    display: block;
+    font-size: 22px;
+    color: rgba(109, 109, 109, 0.8);
+  }
+
   /* Menu Modal ---------------------------- */
 
   .menu-modal {
@@ -1915,6 +1925,10 @@ div.comment:first-of-type {
 }
 
 @media (min-width: 836px) {
+
+  h2.entry-title {
+    font-size: 4rem;
+  }
 
   /* Layout -------------------------------- */
 
