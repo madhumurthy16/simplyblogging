@@ -1,8 +1,8 @@
 <?php
 /**
 * The template for displaying the footer.
-* use the styles in #site-footer for .footer-credits.
-* In my version, #site-footer will have general footer styles like fonts and background color...
+* Note: use the styles in #site-footer for .footer-credits.
+* Note: In my version, #site-footer will have general footer styles like fonts and background color...
 */
 
 $has_sidebar_1 = is_active_sidebar( 'sidebar-1' );
