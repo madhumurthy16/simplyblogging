@@ -2,7 +2,8 @@
 /**
 * Single blog post template
 */
-  get_header();
+
+get_header();
 ?>
 <div class="container">
   <div class="section-inner">
@@ -24,13 +25,18 @@
               <p class="categories-list"><?php echo get_the_category_list( ', ' )?></p>
           </header>
 
-          <figure class="featured-media">
-            <div class="featured-media-image">
-              <?php the_post_thumbnail(); ?>
-              <div class="image-overlay">
-              </div>
-            </div> <!-- .featured-media-inner -->
-          </figure>
+          <?php if( has_post_thumbnail() && ! post_password_required() ) { ?>
+
+            <figure class="featured-media">
+              <div class="featured-media-image">
+                <?php the_post_thumbnail(); ?>
+                <div class="image-overlay">
+                </div>
+              </div> <!-- .featured-media-image -->
+            </figure> <!-- .featured-media -->
+
+          <?php
+          } ?>
 
           <div class="post-inner">
             <div class="entry-content">
