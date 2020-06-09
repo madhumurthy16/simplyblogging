@@ -37,7 +37,7 @@ get_header();
                 $wp_query->found_posts,
                 'simplyblogging'
               ),
-              $wp_query->found_posts
+              number_format_i18n( $wp_query->found_posts )
             );
           }
           else {
@@ -82,14 +82,18 @@ get_header();
 
           <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-            <figure class="featured-media">
-              <div class="featured-media-image">
-                <?php the_post_thumbnail(); ?>
-                <div class="image-overlay">
-                  <a class="image-overlay-link" href="<?php the_permalink(); ?>">Read Post</a>
-                </div>
-              </div> <!-- .featured-media-inner -->
-            </figure>
+            <?php if( has_post_thumbnail( ) && ! post_password_required() ) { ?>
+
+              <figure class="featured-media">
+                <div class="featured-media-image">
+                  <?php the_post_thumbnail(); ?>
+                  <div class="image-overlay">
+                    <a class="image-overlay-link" href="<?php the_permalink(); ?>">Read Post</a>
+                  </div>
+                </div> <!-- .featured-media-image -->
+              </figure> <!-- .featured-media -->
+              <?php
+            } ?>
 
             <header>
                 <p class="categories-list"><?php echo get_the_category_list( ', ' )?></p>
