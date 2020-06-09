@@ -1,3 +1,9 @@
+<?php
+/**
+* Header file for the Simply Blogging custom WordPress file.
+*/
+
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
   <head>
@@ -18,7 +24,7 @@
         <div class="header-titles-wrapper">
 
           <div class="header-titles">
-            <p class="site-icon"><i class="fas fa-edit"></i></p>
+            <p class="site-icon"><i class="fas fa-edit" aria-hidden="true"></i></p>
             <h1 class="site-title"><a href="<?php echo site_url(); ?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
             <div class="site-description"><?php echo get_bloginfo( 'description' ); ?></div>
 
@@ -33,4 +39,6 @@
   <?php
   // Output the menu modal
   get_template_part( 'template-parts/modal-menu' );
-  get_template_part ('template-parts/modal-search' );
+  
+  // Output the search form
+  get_template_part ('template-parts/search-form' );
