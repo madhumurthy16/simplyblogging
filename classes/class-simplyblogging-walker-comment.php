@@ -82,7 +82,7 @@ if( ! class_exists(SimplyBlogging_Walker_Comment) ) {
                 <?php
               }
             ?>
-            
+
           </div> <!-- .comment-content -->
 
           <?php
@@ -112,7 +112,7 @@ if( ! class_exists(SimplyBlogging_Walker_Comment) ) {
                       echo $comment_reply_link;
                   }
                   if( $by_post_author ) {
-                    echo '<span class="by-post-author">' . __( 'By Post Author', 'simplybloggig' ) . '</span>';
+                    echo '<span class="by-post-author">' . __( 'By Post Author', 'simplyblogging' ) . '</span>';
                   }
                  ?>
 
