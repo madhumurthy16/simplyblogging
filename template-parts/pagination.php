@@ -33,7 +33,7 @@ if ( strpos( $posts_pagination, 'prev page-numbers' ) === false ) {
 }
 
 // If we're not outputting the next page link, append a placeholder with visibility: hidden to take its place.
-if( strpos( $posts_pagination, 'next page-numbers' ) === false ){
+if( strpos( $posts_pagination, 'next page-numbers' ) === false ) {
   $posts_pagination = str_replace( '</div>', '<span class="next page-numbers placeholder" aria-hidden="true">' . $next_text . '</span></div>', $posts_pagination );
 }
 
