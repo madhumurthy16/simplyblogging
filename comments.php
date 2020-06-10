@@ -106,7 +106,7 @@ if( comments_open() || pings_open() ) {
     )
   );
 
-} elseif( $is_single() ) {
+} elseif( is_single() ) {
 
   if( $comments ) {
     echo '<hr />';
