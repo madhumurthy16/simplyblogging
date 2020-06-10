@@ -42,6 +42,7 @@ $has_sidebar_2 = is_active_sidebar( 'sidebar-2' );
     <?php } ?>
 
     <div class="footer-credits">
+
         <p class="footer-copyright">&copy;
           <?php echo date_i18n(
             /* translators: Copyright date format, see https://secure.php.net/date */
@@ -50,7 +51,9 @@ $has_sidebar_2 = is_active_sidebar( 'sidebar-2' );
           ?>
           <a href="<?php echo esc_url( home_url( '/' )); ?>"><?php bloginfo( 'name' ); ?></a>
         </p> <!-- .footer-copyright -->
+
         <p class="created-by">Created by, <a href="http://madhumurthy.info" target="_blank">Madhu Murthy</a></p>
+        
     </div> <!-- .footer-credits -->
 
   </div> <!-- .section-inner -->
