@@ -21,11 +21,11 @@ class MobileMenu {
 var mobileMenu = new MobileMenu();
 
 //Add Social Icons to Social Menu Links
-var twitterLink = $j('.twitter-link').children().text('').append('<i class="fab fa-twitter-square"></i>');
-var facebookLink = $j('.facebook-link').children().text('').append('<i class="fab fa-facebook-square"></i>');
-var instagramLink = $j(".instagram-link").children().text('').append('<i class="fab fa-instagram-square"></i>');
+$j('.twitter-link').children().text('').append('<i class="fab fa-twitter-square"></i>');
+$j('.facebook-link').children().text('').append('<i class="fab fa-facebook-square"></i>');
+$j(".instagram-link").children().text('').append('<i class="fab fa-instagram-square"></i>');
 
-// Add/Remove comment form separator (<hr>)
+// Add/Remove post comment form separator (<hr>)
 var hr = $j(".comment-form-separator");
 var replyLink = $j(".comment-reply-link");
 var cancelLink = $j("#cancel-comment-reply-link")
@@ -35,7 +35,7 @@ replyLink.on('click', function() {
     hr.addClass("hide-separator");
   });
 
-// Add comment form separator (<hr>) when cancel reply is clicked 
+// Add comment form separator (<hr>) when cancel reply is clicked
 cancelLink.on('click', function() {
   hr.removeClass("hide-separator");
 });
