@@ -1,9 +1,11 @@
 /*
 Theme Name: Simply Blogging.
-Author: Madhu Murthy
-Author URI: http://madhumurthy.info
-Description: A custom built WordPress blog.
+Text Domain: simplyblogging
 Version: 1.0
+Description: A custom built WordPress blog.
+Tags: blog, two-column, custom-menu, featured-images, footer-widgets, sidebar-widgets, threaded-comments,
+Author: Madhu Murthy
+Author URI: https://madhumurthy.info
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -18,20 +20,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  	3. 	Helper Classes
  	4. 	Site Header
  	5. 	Menu Modal
- 	6. 	Search Modal
- 	7. 	Page Templates
- 		a. 	Template: Cover Template
- 		c. 	Template: Full Width
- 	8.  Post: Archive
- 	9.  Post: Single
- 	10. Blocks
- 	11. Entry Content
- 	12. Comments
- 	13. Site Pagination
- 	14. Error 404
- 	15. Widgets
- 	16. Site Footer
- 	17. Media Queries
+ 	6.  Post: Archive
+ 	7.  Post: Single
+ 	8. Comments
+ 	9. Site Pagination
+ 	10. Error 404
+ 	11. Widgets
+ 	12. Site Footer
+ 	14. Media Queries
 
  ----------------------------------------------------------------------------- */
 
@@ -113,31 +109,46 @@ body {
   background: #fff;
   box-sizing: border-box;
   color: #0D0D0D;
-  font-family: Raleway,-apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: Raleway, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1.8rem;
-  letter-spacing: -0.015em;
-  text-align: left;
+  letter-spacing: 0.015em;
+  /*letter-spacing: -0.015em;
+  text-align: left;*/
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
   -webkit-font-smoothing: antialiased;
   word-break: break-word;
   word-wrap: break-word;
 }
 
+#main-content {
+  overflow: hidden;
+}
+
 .container {
-  margin-top: 3.15rem;
   margin-top: 3rem;
 }
 
+
 /* Clearing ---------------------------------- */
+
+.entry-content::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
 
 /* Base Transitions -------------------------- */
 
 a {
   transition: color 0.15s linear;
 }
+
 
 /* Screen Reader Text  ----------------------- */
 
@@ -201,7 +212,6 @@ a {
 	right: auto;
 }
 
-/* Fonts ------------------------------------- */
 
 /* Accessibility Settings -------------------- */
 
@@ -213,6 +223,7 @@ a {
   }
 }
 
+
 /* -------------------------------------------------------------------------- */
 
 /*	2. Element Base
@@ -222,7 +233,12 @@ main {
   display: block;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.25;
   margin: 3.5rem 0 2rem;
@@ -231,11 +247,12 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3.6rem;
   font-weight: 800;
-  line-height: 1.138888889;
+  line-height: 1.14;
 }
 
 h2 {
   font-size: 3.2rem;
+  /*line-height: 1.14;*/
 }
 
 h3 {
@@ -252,12 +269,25 @@ h5 {
 
 h6 {
   font-size: 1.6rem;
-  letter-spacing: 0.03125em;
 }
 
 p {
   line-height: 1.5;
   margin: 0 0 1em 0;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+small {
+  font-size: 0.75em;
+}
+
+b,
+strong {
+  font-weight: 700;
 }
 
 hr {
@@ -268,12 +298,12 @@ hr {
 }
 
 a {
-  color: #048ABF;
   color: #F25116;
   text-decoration: none;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   color: #048ABF;
 }
 
@@ -747,7 +777,7 @@ section {
 
 /* -------------------------------------------------------------------------- */
 
-/*	8. Post: Archive
+/*	6. Post: Archive
 /* -------------------------------------------------------------------------- */
 
 /* Archive Header ---------------------------- */
@@ -868,7 +898,7 @@ body:not(.single) article {
 
 /* -------------------------------------------------------------------------- */
 
-/*	9. Post: Single
+/*	7. Post: Single
 /* -------------------------------------------------------------------------- */
 
 /* Post Header ------------------------------- */
@@ -1005,7 +1035,7 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
 
 /* -------------------------------------------------------------------------- */
 
-/*	12. Comments
+/*	8. Comments
 /* -------------------------------------------------------------------------- */
 
 /* Comment Item ----------------------------- */
@@ -1279,7 +1309,7 @@ div.comment:first-of-type {
 
 /* -------------------------------------------------------------------------- */
 
-/*	13. Site Pagination
+/*	9. Site Pagination
 /* -------------------------------------------------------------------------- */
 
 .pagination-wrapper {
@@ -1315,7 +1345,7 @@ div.comment:first-of-type {
 
 /* -------------------------------------------------------------------------- */
 
-/*	14. Error 404
+/*	10. Error 404
 /* -------------------------------------------------------------------------- */
 
 .error404-content {
@@ -1324,7 +1354,7 @@ div.comment:first-of-type {
 
 /* -------------------------------------------------------------------------- */
 
-/*	15.	Widgets
+/*	11.	Widgets
 /* -------------------------------------------------------------------------- */
 
 /* Widget Base ------------------------------- */
@@ -1454,7 +1484,7 @@ div.comment:first-of-type {
 
 /* -------------------------------------------------------------------------- */
 
-/*	16. Site Footer
+/*	12. Site Footer
 /* -------------------------------------------------------------------------- */
 
 #site-footer {
@@ -1513,7 +1543,7 @@ div.comment:first-of-type {
 
 /* -------------------------------------------------------------------------- */
 
-/*	17. Media Queries
+/*	13. Media Queries
 /* -------------------------------------------------------------------------- */
 
 
@@ -1685,9 +1715,9 @@ div.comment:first-of-type {
     margin-top: 0;
   }
 
-  body:not(.single) #main-content .blog-posts article:nth-of-type(odd) {
+  /*body:not(.single) #main-content .blog-posts article:nth-of-type(odd) {
     margin-left: 0;
-  }
+  }*/
 
   /* POST HEADER */
 
