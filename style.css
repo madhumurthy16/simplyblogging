@@ -20,13 +20,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  	3. 	Helper Classes
  	4. 	Site Header
  	5. 	Menu Modal
- 	6.  Post: Archive
- 	7.  Post: Single
- 	8. Comments
- 	9. Site Pagination
- 	10. Error 404
- 	11. Widgets
- 	12. Site Footer
+  6. Search Form
+ 	7.  Post: Archive
+ 	8.  Post: Single
+ 	9. Comments
+ 	10. Site Pagination
+ 	11. Error 404
+ 	12. Widgets
+ 	13. Site Footer
  	14. Media Queries
 
  ----------------------------------------------------------------------------- */
@@ -307,6 +308,7 @@ a:focus {
   color: #048ABF;
 }
 
+
 /* Lists ------------------------------------- */
 
 ul, ol {
@@ -335,6 +337,8 @@ li {
   margin: 0;
 }
 
+/* Quotes ------------------------------------ */
+
 blockquote {
   border-color: #027368;
   border-style: solid;
@@ -362,7 +366,6 @@ blockquote p:last-child {
   margin: 0;
 }
 
-/* Code -------------------------------------- */
 
 /* Media ------------------------------------- */
 
@@ -377,7 +380,6 @@ img {
   max-width: 100%;
 }
 
-/* GALLERIES */
 
 /* Inputs ------------------------------------ */
 
@@ -579,6 +581,7 @@ section {
 	margin: 0;
 }
 
+
 /* Colors ------------------------------------ */
 
 /* COLOR */
@@ -586,41 +589,6 @@ section {
 .color-accent {
   color: #A7C8F2;
 }
-
-/* Search Form ------------------------------- */
-
-.search-form-wrapper {
-  padding: 2rem 0;
-}
-
-.search-form {
-  display: flex;
-  flex-wrap: nowrap;
-  /*align-items: stretch;*/
-}
-
-.search-form label {
-  display: flex;
-  /*align-items: stretch;
-  width: 100%;*/
-  flex: 1;
-  font-size: inherit;
-  margin: 0;
-}
-
-/*.search-form .search-field {
-  width: 100%;
-}*/
-
-.search-form .search-submit {
-  flex-shrink: 0;
-  padding: 0.6rem 2rem;
-}
-
-.fa-search {
-  font-size: 2rem;
-}
-
 
 /* Fontawesome Icons ------------------------------ */
 
@@ -635,12 +603,11 @@ section {
 }
 
 
-
-
 /* -------------------------------------------------------------------------- */
 
 /*	4.	Site Header
 /* -------------------------------------------------------------------------- */
+
 
 #site-header {
   background: #fff;
@@ -703,16 +670,12 @@ section {
   margin: 0;
 }
 
+
 /* -------------------------------------------------------------------------- */
 
 /*	5. Menu Modal
 /* -------------------------------------------------------------------------- */
 
-/* Left Sidebar ------------------------------ */
-
-#sidebar-left {
-  display: none;
-}
 
 .menu-modal {
    visibility: hidden;
@@ -774,11 +737,131 @@ section {
    color: #048ABF;
  }
 
+ /* Left Sidebar ------------------------------ */
+
+ #sidebar-left {
+   display: none;
+ }
+
+
+ /* -------------------------------------------------------------------------- */
+
+/*	6. Search Form
+/* -------------------------------------------------------------------------- */
+
+
+.search-form-wrapper {
+  padding: 2rem 0;
+}
+
+.search-form {
+  display: flex;
+  flex-wrap: nowrap;
+  /*align-items: stretch;*/
+}
+
+.search-form label {
+  display: flex;
+  /*align-items: stretch;
+  width: 100%;*/
+  flex: 1;
+  font-size: inherit;
+  margin: 0;
+}
+
+/*.search-form .search-field {
+  width: 100%;
+}*/
+
+.search-form .search-submit {
+  flex-shrink: 0;
+  padding: 0.6rem 2rem;
+}
+
+.fa-search {
+  font-size: 2rem;
+}
+
 
 /* -------------------------------------------------------------------------- */
 
-/*	6. Post: Archive
+/*	7. Featured Media
 /* -------------------------------------------------------------------------- */
+
+
+.featured-media {
+  margin-top: 5rem;
+  position: relative;
+}
+
+.featured-media-image {
+  position: relative;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.featured-media-image img {
+  transition: transform 0.5s;
+  /*transform-origin: 0 0;*/
+}
+
+.featured-media-image:hover img {
+  transform: scale(1.1);
+  /*transform: translateX(100%);*/
+}
+
+/*.featured-media-image:hover .image-overlay {
+  transform: translateX(0);
+}*/
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,.65);
+  opacity: 0;
+  transition: opacity .5s;
+  /*opacity: 1;
+  transition: transform .5s;
+  transform: translateX(-100%);*/
+}
+
+.image-overlay:hover {
+  opacity: 1;
+}
+
+.image-overlay-link {
+  color: #fff;
+  background: rgba(242,81,22,0.5);
+  padding: 2rem;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity .5s .2s, background .5s .2s, border 0 ease-in .2s, color .5s .3s;
+}
+
+.image-overlay:hover .image-overlay-link {
+  opacity: 1;
+}
+
+.image-overlay-link:focus,
+.image-overlay-link:hover {
+  color: #F25116;
+  background: transparent;
+  border: 0.1rem solid #F25116;
+}
+
+
+/* ------------------------------------------------------------------------- */
+
+/*	7. Post: Archive
+/* -------------------------------------------------------------------------- */
+
 
 /* Archive Header ---------------------------- */
 
@@ -803,6 +886,7 @@ section {
   margin-bottom: 0;
 }*/
 
+
 /* Posts ------------------------------------- */
 
 /*.content-outer-wrapper {
@@ -821,10 +905,13 @@ body:not(.single) article {
   /*flex: auto */
   /* flex: 1 40% */
   margin-left: 2rem;
-  margin-bottom: 2rem;
   margin-bottom: 4rem;
   /*min-width: 40%;*/
   /*width: 40%;*/
+}
+
+body:not(.single) #main-content .blog-posts article:first-of-type > figure {
+  margin-top: 0;
 }
 
 
@@ -890,16 +977,11 @@ body:not(.single) article {
 }
 
 
-/* Search Results ---------------------------- */
-
-/*.no-search-results-form {
-  padding-top: 1rem;
-}*/
-
 /* -------------------------------------------------------------------------- */
 
 /*	7. Post: Single
 /* -------------------------------------------------------------------------- */
+
 
 /* Post Header ------------------------------- */
 
@@ -914,84 +996,17 @@ body.single .featured-media {
   margin-top: 0;
 }
 
-.featured-media {
-  margin-top: 5rem;
-  position: relative;
-}
-
-.featured-media-image {
-  position: relative;
-  line-height: 0;
-  overflow: hidden;
-}
-
-.featured-media-image img {
-  transition: transform 0.5s;
-  /*transform-origin: 0 0;*/
-}
-
-.featured-media-image:hover img {
-  transform: scale(1.1);
-  /*transform: translateX(100%);*/
-}
-
-/*.featured-media-image:hover .image-overlay {
-  transform: translateX(0);
-}*/
-
-.image-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0,0,0,.65);
-  opacity: 0;
-  transition: opacity .5s;
-  /*opacity: 1;
-  transition: transform .5s;
-  transform: translateX(-100%);*/
-}
-
-.image-overlay:hover {
-  opacity: 1;
-}
-
-.image-overlay-link {
-  color: #fff;
-  background: rgba(242,81,22,0.5);
-  padding: 2rem;
-  text-decoration: none;
-  opacity: 0;
-  transition: opacity .5s .2s, background .5s .2s, border .5s ease-in .2s, color .5s .3s;
-}
-
-.image-overlay:hover .image-overlay-link {
-  opacity: 1;
-}
-
-.image-overlay-link:focus,
-.image-overlay-link:hover {
-  color: #F25116;
-  background: transparent;
-  border: 0.1rem solid #F25116;
-}
-
-body:not(.single) #main-content .blog-posts article:first-of-type > figure {
-  margin-top: 0;
-}
-
 /*.featured-media img {
   margin: 0 auto;
 }*/
 
+
+/* Post ontent ------------------------------ */
+
 .post-inner {
   padding-top: 2rem;
 }
+
 
 /* Single Pagination ------------------------- */
 
@@ -1011,7 +1026,6 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
 .pagination-single a {
   display: flex;
   font-weight: 600;
-  letter-spacing: -0.0275em;
 }
 
 .pagination-single a + a {
@@ -1033,10 +1047,12 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
   left: -10px;
 }*/
 
+
 /* -------------------------------------------------------------------------- */
 
 /*	8. Comments
 /* -------------------------------------------------------------------------- */
+
 
 /* Comment Item ----------------------------- */
 
@@ -1113,7 +1129,6 @@ div.comment:first-of-type {
   text-decoration: underline;
 }
 
-/* COMMENT CONTENT */
 
 /* COMMENT FOOTER */
 
@@ -1152,12 +1167,14 @@ div.comment:first-of-type {
   display: block
 }
 
+
 /* Pingbacks & Trackbacks ------------------------- */
 
 .pingback .comment-meta,
 .trackback .comment-meta {
   padding-left: 0;
 }
+
 
 /* Comments Pagination ---------------------------- */
 
@@ -1209,6 +1226,7 @@ div.comment:first-of-type {
 .comments-wrapper + hr, .comments + hr {
   margin: 3rem 0;
 }
+
 
 /* Comment Respond ( Post a comment )---------------------------- */
 
@@ -1282,6 +1300,7 @@ div.comment:first-of-type {
   text-align: center;
 }
 
+
 /* Reply Respond ( Reply to a comment posted by a user ) ---------------------------- */
 
 .comments .comment-respond {
@@ -1311,6 +1330,7 @@ div.comment:first-of-type {
 
 /*	9. Site Pagination
 /* -------------------------------------------------------------------------- */
+
 
 .pagination-wrapper {
   margin-top: 2rem;
@@ -1343,19 +1363,23 @@ div.comment:first-of-type {
   display: none;
 }
 
+
 /* -------------------------------------------------------------------------- */
 
 /*	10. Error 404
 /* -------------------------------------------------------------------------- */
 
+
 .error404-content {
   text-align: center;
 }
+
 
 /* -------------------------------------------------------------------------- */
 
 /*	11.	Widgets
 /* -------------------------------------------------------------------------- */
+
 
 /* Widget Base ------------------------------- */
 
@@ -1378,6 +1402,7 @@ div.comment:first-of-type {
 .widget li:first-child {
   margin-top: 0;
 }
+
 
 /* Base List Widget -------------------------- */
 
@@ -1749,6 +1774,11 @@ div.comment:first-of-type {
     font-size: 2rem;
     margin-top: 2.5rem;
   }
+
+  body:not(.single) article {
+    margin-bottom: 2rem;
+  }
+
 
   /* Site Pagination ----------------------- */
 
