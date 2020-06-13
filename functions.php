@@ -1,4 +1,6 @@
 <?php
+/** Simply Blogging functions and definitions
+*/
 
 /**
  * Table of Contents:
@@ -17,15 +19,11 @@
 */
 
 function simplyblogging_theme_support() {
-  // Custom background color.
-  add_theme_support( 'custom-background', array(
-    'default-color' => 'f5efe0',
-  ));
 
   // Set content-width.
   global $content_width;
   if( !isset ( $content_width )) {
-    $content_width = 580;
+    $content_width = 912;
   }
 
   /*
@@ -37,26 +35,12 @@ function simplyblogging_theme_support() {
   // Set post thumbnail size ( Featured Image )
   set_post_thumbnail_size( 912, 9999 );
 
-  // Custom logo
-  $logo_width = 120;
-  $logo_height = 90;
-
-  // If the retina setting is active, double the recommeded width and height.
-  if( get_theme_mod( 'retina_logo', false )) {
-    $logo_width = floor( $logo_width * 2 );
-    $logo_height = floor( $logo_height * 2 );
-  }
-
-  add_theme_support( 'custom-logo', array (
-    'height'      => $logo_height,
-    'width'       => $logo_width,
-    'flex-height' => true,
-    'flex-width'  => true,
-  ));
-
   /*
-  * Let WordPress manage the document title.
-  */
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
   add_theme_support( 'title-tag' );
 
   /*
@@ -74,7 +58,13 @@ function simplyblogging_theme_support() {
     'style',
   ));
 
+  /*
+  * Make theme available for translation.
+  */
+  load_theme_textdomain( 'simplyblogging' );
+
 }
+
 add_action( 'after_setup_theme', 'simplyblogging_theme_support');
 
 /**
@@ -91,9 +81,13 @@ require get_template_directory() . '/classes/class-simplyblogging-walker-comment
 * Register and Enqueue Styles
 */
 function simplyblogging_register_styles() {
+
   $theme_version = wp_get_theme()->get( 'version' );
+
   wp_enqueue_style( 'custom-google-fonts', '//fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700,700i,800' );
+
   wp_enqueue_style('font-awesome', '//use.fontawesome.com/releases/v5.13.0/css/all.css');
+
   wp_enqueue_style( 'simplyblogging_style', get_stylesheet_uri(), array(), $theme_version );
 }
 
@@ -107,10 +101,15 @@ add_action( 'wp_enqueue_scripts', 'simplyblogging_register_styles' );
 
    $theme_version = wp_get_theme()->get( 'version' );
 
+   /* Enqueue script (comment-reply.js) to display the form next to the comment being replied to.
+   /* This JavaScript file comes with WordPress */
+
    if( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
      wp_enqueue_script( 'comment-reply' );
    }
+
    wp_enqueue_script( 'simplyblogging-js', get_template_directory_uri() . '/assets/js/index.js', array('jquery'), $theme_version, true );
+
  }
 
  add_action( 'wp_enqueue_scripts', 'simplyblogging_register_scripts' );
@@ -121,7 +120,6 @@ add_action( 'wp_enqueue_scripts', 'simplyblogging_register_styles' );
 
  function simplyblogging_menus() {
    $locations = array(
-     'primary' => __( 'Desktop Menu', 'simplyblogging' ),
      'mobile'  => __( 'Mobile Menu', 'simplyblogging' ),
      'footer'  => __( 'Footer Menu', 'simplyblogging' ),
      'social'  => __( 'Social Menu', 'simplyblogging' ),
@@ -145,14 +143,10 @@ add_action( 'wp_enqueue_scripts', 'simplyblogging_register_styles' );
  * Include a skip to content link at the top of the page so that users can bypass the menu.
  */
 function simplyblogging_skip_link() {
-	echo '<a class="skip-link screen-reader-text" href="#site-content">' . __( 'Skip to the content', 'simplyblogging' ) . '</a>';
+	echo '<a class="skip-link screen-reader-text" href="#main-content">' . __( 'Skip to the content', 'simplyblogging' ) . '</a>';
 }
 
 add_action( 'wp_body_open', 'simplyblogging_skip_link', 5 );
-
-/**
-* Register widget areas
-*/
 
 /**
  * Register widget areas.
@@ -174,9 +168,9 @@ function simplyblogging_sidebar_registration() {
     array_merge(
         $shared_args,
         array(
-          'name' => __( 'Left Sidebar', 'simplyblogging' ),
-          'id'   => 'sidebar-left',
-          'description' => __( 'Widgets in this area will be displayed on the left side of the main content.', 'simplyblogging' ),
+          'name' => __( 'Categories Sidebar', 'simplyblogging' ),
+          'id'   => 'sidebar-categories',
+          'description' => __( 'This area will display the categories widget on the left side of the main content and in the mobile menu.', 'simplyblogging' ),
       )
     )
   );
