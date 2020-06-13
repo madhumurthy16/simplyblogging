@@ -10,7 +10,7 @@ get_header();
     <div class="content-wrapper">
 
       <aside id="sidebar-left">
-        <?php dynamic_sidebar( 'sidebar-left' ); ?>
+        <?php dynamic_sidebar( 'sidebar-categories' ); ?>
       </aside>
 
       <main id="main-content" role="main">
