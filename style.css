@@ -23,7 +23,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   6. Search Form
  	7.  Post: Archive
  	8.  Post: Single
- 	9. Comments
+ 	9.  Comments
  	10. Site Pagination
  	11. Error 404
  	12. Widgets
@@ -1408,13 +1408,30 @@ div.comment:first-of-type {
 
 .widget_archive ul,
 .widget_categories ul,
-.widget_recent_entries ul {
+.widget_pages ul,
+.widget_meta ul,
+.widget_nav_menu ul,
+.widget_recent_comments ul,
+.widget_recent_entries ul,
+.widget_rss ul {
   list-style: none;
   margin: 0;
 }
 
+.widget_archive li,
+.widget_categories li,
+.widget_pages li,
+.widget_meta li,
+.widget_nav_menu li {
+  color: #6d6d6d;
+  margin: 0.3rem 0;
+}
+
 .widget_archive a,
 .widget_categories a,
+.widget_pages a,
+.widget_meta a,
+.widget_nav_menu a,
 .widget_recent_entries a,
 .widget_tag_cloud a {
   color: #F25116;
@@ -1427,25 +1444,41 @@ div.comment:first-of-type {
 .widget_archive a:hover,
 .widget_categories a:focus,
 .widget_categories a:hover,
+.widget_pages a:focus,
+.widget_pages a:hover,
+.widget_meta a:focus,
+.widget_meta a:hover,
+.widget_nav_menu a:focus,
+.widget_nav_menu a:hover,
 .widget_recent_entries a:focus,
-.widget_recent_entries a:hover {
+.widget_recent_entries a:hover,
+.widget_tag_cloud a:focus,
+.widget_tag_cloud a:hover {
   color: #048ABF;
 }
 
+
 /* Widget: Categories ------------------------ */
 
-/*.widget_categories ul li {
-   border-bottom: 1px solid #F25116;
-}*/
-
-.widget_categories a:before {
+#sidebar-left .widget_categories a:before,
+.menu-modal .widget_categories a:before {
   content: "\f101";
+  content: "\f45c";
   font-family: "Font Awesome 5 Free";
-  margin-right: 5px;
-  font-size: 12px;
+  margin-right: 8px;
+  font-size: 4px;
   font-weight: 600;
   position: relative;
-  bottom: 2px;
+  bottom: 4px;
+}
+
+#sidebar-left .widget_categories .widget-title,
+.menu-modal .widget_categories .widget-title {
+  display: none;
+}
+
+.widget_categories li {
+  margin: 1rem 0;
 }
 
 /* Widget: Search ---------------------------- */
@@ -1506,11 +1539,11 @@ div.comment:first-of-type {
 }
 
 
-
 /* -------------------------------------------------------------------------- */
 
 /*	12. Site Footer
 /* -------------------------------------------------------------------------- */
+
 
 #site-footer {
   margin-top: 5rem;
@@ -1530,11 +1563,13 @@ div.comment:first-of-type {
   padding: 3rem 0;
 }
 
+
 /* Footer Widgets ---------------------------- */
 
 .footer-widgets + .footer-widgets {
   margin-top: 3rem;
 }
+
 
 /* Footer Credits ---------------------------- */
 
@@ -1585,43 +1620,49 @@ div.comment:first-of-type {
   }
 
   h4,
+  h5,
   h6 {
     margin: 4.5rem auto 2.5rem;
   }
 
   h1 {
-    font-size: 6.4rem;
     font-size: 4.8rem;
   }
 
   h2 {
-    font-size: 4.8rem;
     font-size: 4rem;
   }
 
   h3 {
-    font-size: 4rem;
     font-size: 3.2rem;
   }
 
   h4 {
-    font-size: 3.2rem;
     font-size: 2.4rem;
   }
 
   h5{
-    font-size: 2.4rem;
     font-size: 1.8rem;
   }
 
   h6 {
-    font-size: 1.8rem;
     font-size: 1.6rem;
   }
 
-  h2.entry-title {
-    font-size: 3.6rem;
+  /*h2.entry-title {
+    font-size: 4rem;
+  }*/
+
+
+  /* INPUTS */
+
+  button,
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+    font-size: 1.7rem;
   }
+
 
   /* Document Setup ------------------------ */
 
@@ -1629,83 +1670,7 @@ div.comment:first-of-type {
     margin-top: 5rem;
   }
 
-  /* Layout -------------------------------- */
-
-  #sidebar-left {
-    display: block;
-  }
-
-  #sidebar-left .widget-title {
-    display: none;
-  }
-
-  #sidebar-left,
-  #sidebar-right {
-    /*flex: 1 20%;*/
-    flex: 1;
-  }
-
-  #main-content {
-    /*flex: 1 80%;*/
-    flex: 3;
-  }
-
-  /* Helper Classes ------------------------- */
-
-  /*hr {
-    display: none;
-  }*/
-
-  /* SECTIONS */
-
-  .section-inner {
-    width: calc(100% - 8rem);
-  }
-
-  /* Site Header ----------------------------- */
-
-  /* HEADER TITLES */
-
-  .header-titles-wrapper {
-    justify-content: center;
-    text-align: center;
-    padding: 0 4rem;
-  }
-
-  .site-icon {
-    margin-bottom: 0.8em;
-    transition: transform 0.5s;
-    transition: transform 0.6s cubic-bezier(.38,-0.61,.3,1.44);
-  }
-  .site-icon:hover {
-    /*transform: rotate(-5deg);*/
-    transform: translateY(-4px);
-  }
-
-  .site-icon i {
-    display: block;
-    font-size: 22px;
-    color: rgba(109, 109, 109, 0.8);
-  }
-
-  /* Menu Modal ---------------------------- */
-
-  .menu-modal {
-     visibility: hidden;
-   }
-
-  .site-header-menu-trigger {
-     display: none;
-   }
-
-
-  /* Widgets ------------------------------- */
-
-  .widget .widget-title {
-    margin-bottom: 3rem;
-  }
-
-  /* Posts ------------------------------------- */
+  /* Content Layout ------------------------ */
 
   .content-wrapper {
     display: flex;
@@ -1719,6 +1684,89 @@ div.comment:first-of-type {
   #sidebar-right {
     margin-left: 4rem;
   }
+
+  #sidebar-left {
+    display: block;
+  }
+
+  #sidebar-left,
+  #sidebar-right {
+    /*flex: 1 20%;*/
+    flex: 1;
+  }
+
+  #main-content {
+    /*flex: 1 80%;*/
+    flex: 3;
+  }
+
+
+  /* Helper Classes ------------------------- */
+
+
+  /* SECTIONS */
+
+  .section-inner {
+    width: calc(100% - 8rem);
+  }
+
+
+  /* Site Header ----------------------------- */
+
+  /* HEADER TITLES */
+
+  .header-titles-wrapper {
+    justify-content: center;
+    text-align: center;
+    padding: 0 4rem;
+  }
+
+  .site-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+
+  .site-icon {
+    margin-bottom: 0.8em;
+    transition: transform 0.5s;
+    transition: transform 0.6s cubic-bezier(.38,-0.61,.3,1.44);
+  }
+
+  .site-icon:hover {
+    /*transform: rotate(-5deg);*/
+    transform: translateY(-4px);
+  }
+
+  .site-icon i {
+    display: block;
+    font-size: 22px;
+    color: rgba(109, 109, 109, 0.8);
+  }
+
+
+  /* Menu Modal ---------------------------- */
+
+  .menu-modal {
+     visibility: hidden;
+   }
+
+  .site-header-menu-trigger {
+     display: none;
+   }
+
+  /* Post: Archive ------------------------- */
+
+  .archive-header {
+		padding-bottom: 8rem;
+	}
+
+  .archive-title {
+    font-size: 3.2rem;
+  }
+
+  /*body:not(.single) article {
+    margin-bottom: 2rem;
+  }*/
 
   .blog-posts {
     display: flex;
@@ -1734,17 +1782,14 @@ div.comment:first-of-type {
     flex: 1 0;
     min-width: 40%;
     margin-left: 4rem;
+    margin-bottom: 2rem;
   }
 
   body:not(.single) #main-content .blog-posts article:nth-of-type(2) > figure {
     margin-top: 0;
   }
 
-  /*body:not(.single) #main-content .blog-posts article:nth-of-type(odd) {
-    margin-left: 0;
-  }*/
-
-  /* POST HEADER */
+  /* Post: Archive & Single ---------------- */
 
   .post-inner {
     padding-top: 3rem;
@@ -1752,57 +1797,17 @@ div.comment:first-of-type {
 
   /* CATEGORIES */
 
-  /*body:not(.single) .categories-list {
-    margin: 3rem 0;
-  }*/
-
   .categories-list {
     margin: 3rem 0;
   }
 
-  /* Post: Archive ------------------------- */
 
-	.archive-header {
-		padding-bottom: 8rem;
-	}
-
-  .archive-title {
-    font-size: 3.2rem;
-  }
+	/* Post: Single -------------------------- */
 
   .intro-text {
     font-size: 2rem;
     margin-top: 2.5rem;
   }
-
-  body:not(.single) article {
-    margin-bottom: 2rem;
-  }
-
-
-  /* Site Pagination ----------------------- */
-
-  /* Display the full text for Newer and Older texts */
-
-  .pagination-wrapper {
-    margin-top: 3rem;
-  }
-
-  .nav-short {
-    display: inline;
-  }
-
-  .pagination .nav-links {
-    font-size: 2.4rem;
-    font-weight: 700;
-    margin: -2.5rem 0 0 -4rem;
-  }
-
-  .nav-links > * {
-    margin: 2.5rem 0 0 4rem;
-  }
-
-  /* Post: Single -------------------------- */
 
   /* SINGLE PAGINATION */
 
@@ -1943,6 +1948,37 @@ div.comment:first-of-type {
     margin: 0 0 0 0.5rem;
   }
 
+
+  /* Site Pagination ----------------------- */
+
+  /* Display the full text for Newer and Older texts */
+
+  .pagination-wrapper {
+    margin-top: 3rem;
+  }
+
+  .nav-short {
+    display: inline;
+  }
+
+  .pagination .nav-links {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin: -2.5rem 0 0 -4rem;
+  }
+
+  .nav-links > * {
+    margin: 2.5rem 0 0 4rem;
+  }
+
+
+  /* Widgets ------------------------------- */
+
+   .widget .widget-title {
+     margin-bottom: 3rem;
+   }
+
+
   /* Site Footer --------------------------- */
 
   #site-footer {
@@ -1994,13 +2030,10 @@ div.comment:first-of-type {
   }
 }
 
+
 @media (min-width: 836px) {
 
-  h2.entry-title {
-    font-size: 4rem;
-  }
-
-  /* Layout -------------------------------- */
+  /* Content Layout ----------------------- */
 
   #sidebar-left,
   #sidebar-right {
@@ -2013,6 +2046,14 @@ div.comment:first-of-type {
     flex: 4;
   }
 }
+
+
+/* Post: Archive & Single ---------------- */
+
+/*h2.entry-title {
+  font-size: 3.6rem;
+}*/
+
 
 @media ( min-width: 1000px ) {
 
@@ -2042,8 +2083,8 @@ div.comment:first-of-type {
     margin: 0 0 0 auto;
   }
 
-
 }
+
 
 @media ( min-width: 1220px ) {
 
@@ -2063,7 +2104,7 @@ div.comment:first-of-type {
     font-size: 2.1rem;
   }
 
-  /* Posts ------------------------------------- */
+  /* Content Layout ----------------------- */
 
   .content-wrapper {
     margin-left: -6rem;
