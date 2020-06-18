@@ -10,6 +10,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 
+
  /*--------------------------------------------------------------
  >>> TABLE OF CONTENTS:
  ----------------------------------------------------------------
@@ -21,90 +22,92 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  	4. 	Site Header
  	5. 	Menu Modal
   6. Search Form
- 	7.  Post: Archive
- 	8.  Post: Single
- 	9.  Comments
- 	10. Site Pagination
- 	11. Error 404
- 	12. Widgets
- 	13. Site Footer
- 	14. Media Queries
+  7. Featured Media
+ 	8.  Post: Archive
+ 	9.  Post: Single
+ 	10.  Comments
+ 	11. Site Pagination
+ 	12. Error 404
+ 	13. Widgets
+ 	14. Site Footer
+ 	15. Media Queries
 
  ----------------------------------------------------------------------------- */
 
 
- /* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
 
- /*	0. CSS Reset
- /* -------------------------------------------------------------------------- */
+/*	0. CSS Reset
+/* -------------------------------------------------------------------------- */
 
- html,
- body {
- 	border: none;
- 	margin: 0;
- 	padding: 0;
- }
+html,
+body {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
 
- h1,
- h2,
- h3,
- h4,
- h5,
- h6,
- p,
- blockquote,
- address,
- big,
- cite,
- code,
- em,
- font,
- img,
- small,
- strike,
- sub,
- sup,
- li,
- ol,
- ul,
- fieldset,
- form,
- label,
- legend,
- button,
- table,
- caption,
- tr,
- th,
- td {
- 	border: none;
- 	font-size: inherit;
- 	line-height: inherit;
- 	margin: 0;
- 	padding: 0;
- 	text-align: inherit;
- }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+address,
+big,
+cite,
+code,
+em,
+font,
+img,
+small,
+strike,
+sub,
+sup,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+legend,
+button,
+table,
+caption,
+tr,
+th,
+td {
+	border: none;
+	font-size: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	text-align: inherit;
+}
 
- blockquote::before,
- blockquote::after {
- 	content: "";
- }
+blockquote::before,
+blockquote::after {
+	content: "";
+}
 
- /* -------------------------------------------------------------------------- */
 
- /*	1. Document Setup
- /* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
 
+/*	1. Document Setup
+/* -------------------------------------------------------------------------- */
+
+html {
+ font-size: 62.5%; /* 1rem = 10px */
+ scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce ) {
  html {
-   font-size: 62.5%; /* 1rem = 10px */
-   scroll-behavior: smooth;
+   scroll-behavior: auto;
  }
-
- @media (prefers-reduced-motion: reduce ) {
-   html {
-     scroll-behavior: auto;
-   }
- }
+}
 
 body {
   background: #fff;
@@ -113,8 +116,6 @@ body {
   font-family: Raleway, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1.8rem;
   letter-spacing: 0.015em;
-  /*letter-spacing: -0.015em;
-  text-align: left;*/
 }
 
 *,
@@ -253,7 +254,6 @@ h1 {
 
 h2 {
   font-size: 3.2rem;
-  /*line-height: 1.14;*/
 }
 
 h3 {
@@ -336,6 +336,7 @@ li {
 .reset-list-style li {
   margin: 0;
 }
+
 
 /* Quotes ------------------------------------ */
 
@@ -457,7 +458,6 @@ textarea {
   box-shadow: none;
   display: block;
   font-size: 1.6rem;
-  letter-spacing: -0.015em;
   margin: 0;
   margin-right: 2px;
   max-width: 100%;
@@ -521,7 +521,6 @@ input[type="button"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:hover {
   text-decoration: none;
-  /*background: #048ABF;*/
   opacity: 0.85;
 }
 
@@ -546,6 +545,7 @@ input[type="search"]:focus {
 .no-padding {
   padding: 0;
 }
+
 
 /* Sections ---------------------------------- */
 
@@ -590,6 +590,7 @@ section {
   color: #A7C8F2;
 }
 
+
 /* Fontawesome Icons ------------------------------ */
 
 .widget_categories a:before,
@@ -608,18 +609,15 @@ section {
 /*	4.	Site Header
 /* -------------------------------------------------------------------------- */
 
-
 #site-header {
   background: #fff;
-  /*z-index: 20;*/
-  /*position: relative;*/
 }
 
 .header-inner {
   max-width: 168rem;
   padding: 3.15rem 0;
-  /*z-index: 100;*/
 }
+
 
 /* Header Titles ----------------------------- */
 
@@ -662,8 +660,7 @@ section {
   color: #6d6d6d;
   font-size: 1.8rem;
   font-weight: 500;
-  letter-spacing: -0.0311em;
-  /*transition: all 0.15s linear;*/
+  letter-spacing: -0.01em;
 }
 
 .header-titles {
@@ -676,11 +673,9 @@ section {
 /*	5. Menu Modal
 /* -------------------------------------------------------------------------- */
 
-
 .menu-modal {
    visibility: hidden;
    position: absolute;
-   background-color: rgba(242, 81, 22, 0.8);
    background-color: #f9f9f9;
    left: 0;
    right: 0;
@@ -690,13 +685,11 @@ section {
            transform: translateY(-20%);
    transition: opacity .3s ease-out, visibility .3s ease-out, -webkit-transform .3s ease-out;
    transition: opacity .3s ease-out, visibility .3s ease-out, transform .3s ease-out;
-   transition: opacity .3s ease-out, visibility .3s ease-out, transform .3s ease-out, -webkit-transform .3s ease-out;
    padding: 30px;
    padding-left: 0;
  }
 
  .site-header-menu-trigger {
-   color: #048ABF;
    color: inherit;
    cursor: pointer;
    font-size: 2.5rem;
@@ -737,6 +730,7 @@ section {
    color: #048ABF;
  }
 
+
  /* Left Sidebar ------------------------------ */
 
  #sidebar-left {
@@ -749,7 +743,6 @@ section {
 /*	6. Search Form
 /* -------------------------------------------------------------------------- */
 
-
 .search-form-wrapper {
   padding: 2rem 0;
 }
@@ -757,21 +750,14 @@ section {
 .search-form {
   display: flex;
   flex-wrap: nowrap;
-  /*align-items: stretch;*/
 }
 
 .search-form label {
   display: flex;
-  /*align-items: stretch;
-  width: 100%;*/
   flex: 1;
   font-size: inherit;
   margin: 0;
 }
-
-/*.search-form .search-field {
-  width: 100%;
-}*/
 
 .search-form .search-submit {
   flex-shrink: 0;
@@ -788,7 +774,6 @@ section {
 /*	7. Featured Media
 /* -------------------------------------------------------------------------- */
 
-
 .featured-media {
   margin-top: 5rem;
   position: relative;
@@ -802,17 +787,11 @@ section {
 
 .featured-media-image img {
   transition: transform 0.5s;
-  /*transform-origin: 0 0;*/
 }
 
 .featured-media-image:hover img {
   transform: scale(1.1);
-  /*transform: translateX(100%);*/
 }
-
-/*.featured-media-image:hover .image-overlay {
-  transform: translateX(0);
-}*/
 
 .image-overlay {
   position: absolute;
@@ -827,9 +806,6 @@ section {
   background: rgba(0,0,0,.65);
   opacity: 0;
   transition: opacity .5s;
-  /*opacity: 1;
-  transition: transform .5s;
-  transform: translateX(-100%);*/
 }
 
 .image-overlay:hover {
@@ -859,7 +835,7 @@ section {
 
 /* ------------------------------------------------------------------------- */
 
-/*	7. Post: Archive
+/*	8. Post: Archive
 /* -------------------------------------------------------------------------- */
 
 
@@ -873,7 +849,6 @@ section {
 .archive-title {
   font-size: 2.4rem;
   font-weight: 700;
-  letter-spacing: -0.0267em;
   margin: 0;
 }
 
@@ -882,32 +857,16 @@ section {
   line-height: 1.5;
 }
 
-/*.archive-subtitle p:last-child {
-  margin-bottom: 0;
-}*/
-
 
 /* Posts ------------------------------------- */
 
-/*.content-outer-wrapper {
-  padding: 0 0 3rem 0;
-}*/
-
 .blog-posts {
   margin-left: -2rem;
-  /*display: flex;
-  justify-content: space-between;
-  flex-flow: row wrap;*/
 }
 
 body:not(.single) article {
-  /*flex: 1 0;*/
-  /*flex: auto */
-  /* flex: 1 40% */
   margin-left: 2rem;
   margin-bottom: 4rem;
-  /*min-width: 40%;*/
-  /*width: 40%;*/
 }
 
 body:not(.single) #main-content .blog-posts article:first-of-type > figure {
@@ -916,10 +875,6 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
 
 
 /* Categories ------------------------------ */
-
-/*body:not(.single) .categories-list {
-  margin: 2rem 0;
-}*/
 
 .categories-list {
   line-height: 1.25;
@@ -937,6 +892,7 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
 .categories-list a:hover {
   color: #0D0D0D;
 }
+
 
 /* Entry Content ----------------------------*/
 
@@ -979,7 +935,7 @@ body:not(.single) #main-content .blog-posts article:first-of-type > figure {
 
 /* -------------------------------------------------------------------------- */
 
-/*	7. Post: Single
+/*	9. Post: Single
 /* -------------------------------------------------------------------------- */
 
 
@@ -996,12 +952,8 @@ body.single .featured-media {
   margin-top: 0;
 }
 
-/*.featured-media img {
-  margin: 0 auto;
-}*/
 
-
-/* Post ontent ------------------------------ */
+/* Post Content ------------------------------ */
 
 .post-inner {
   padding-top: 2rem;
@@ -1036,21 +988,10 @@ body.single .featured-media {
   margin-right: 1rem;
 }
 
-/*.pagination-single  .next-post .arrow {
-   position: relative;
-   left: 0;
-   transition: left 0.5s;
-
-}
-
-.pagination-single .next-post:hover .arrow {
-  left: -10px;
-}*/
-
 
 /* -------------------------------------------------------------------------- */
 
-/*	8. Comments
+/*	10. Comments
 /* -------------------------------------------------------------------------- */
 
 
@@ -1199,15 +1140,6 @@ div.comment:first-of-type {
   display: block;
 }
 
-/*.comments-pagination .prev {
-  left: 0;
-}
-
-.comments-pagination .next {
-  right: 0;
-  text-align: right;
-}*/
-
 .comments-wrapper + hr {
   height: 0.1rem;
   background-color: #dedfdf;
@@ -1241,7 +1173,6 @@ div.comment:first-of-type {
   color: #6d6d6d;
   font-size: 1.6rem;
   line-height: 1.4;
-  /*margin: -3rem 0 4rem 0;*/
 }
 
 .comment-respond .comment-notes a,
@@ -1328,9 +1259,8 @@ div.comment:first-of-type {
 
 /* -------------------------------------------------------------------------- */
 
-/*	9. Site Pagination
+/*	11. Site Pagination
 /* -------------------------------------------------------------------------- */
-
 
 .pagination-wrapper {
   margin-top: 2rem;
@@ -1354,11 +1284,6 @@ div.comment:first-of-type {
   visibility: hidden;
 }
 
-/*.pagination a:focus,
-.pagination a:hover {
-  text-decoration: underline;
-}*/
-
 .nav-short {
   display: none;
 }
@@ -1366,9 +1291,8 @@ div.comment:first-of-type {
 
 /* -------------------------------------------------------------------------- */
 
-/*	10. Error 404
+/*	12. Error 404
 /* -------------------------------------------------------------------------- */
-
 
 .error404-content {
   text-align: center;
@@ -1377,7 +1301,7 @@ div.comment:first-of-type {
 
 /* -------------------------------------------------------------------------- */
 
-/*	11.	Widgets
+/*	13.	Widgets
 /* -------------------------------------------------------------------------- */
 
 
@@ -1481,11 +1405,13 @@ div.comment:first-of-type {
   margin: 1rem 0;
 }
 
+
 /* Widget: Search ---------------------------- */
 
 .widget_search .search_field {
   border-color: #dedfdf;
 }
+
 
 /* Widget: Tag Cloud ------------------------- */
 
@@ -1500,6 +1426,7 @@ div.comment:first-of-type {
 .widget_tag_cloud a:hover {
   color: #048ABF;
 }
+
 
 /* Widget: Social Menu ----------------------- */
 
@@ -1541,12 +1468,11 @@ div.comment:first-of-type {
 
 /* -------------------------------------------------------------------------- */
 
-/*	12. Site Footer
+/*	14. Site Footer
 /* -------------------------------------------------------------------------- */
 
 
 #site-footer {
-  margin-top: 5rem;
   margin-top: 3rem;
 }
 
@@ -1603,7 +1529,7 @@ div.comment:first-of-type {
 
 /* -------------------------------------------------------------------------- */
 
-/*	13. Media Queries
+/*	15. Media Queries
 /* -------------------------------------------------------------------------- */
 
 
@@ -1649,10 +1575,6 @@ div.comment:first-of-type {
     font-size: 1.6rem;
   }
 
-  /*h2.entry-title {
-    font-size: 4rem;
-  }*/
-
 
   /* INPUTS */
 
@@ -1669,6 +1591,7 @@ div.comment:first-of-type {
   .container {
     margin-top: 5rem;
   }
+
 
   /* Content Layout ------------------------ */
 
@@ -1691,18 +1614,15 @@ div.comment:first-of-type {
 
   #sidebar-left,
   #sidebar-right {
-    /*flex: 1 20%;*/
     flex: 1;
   }
 
   #main-content {
-    /*flex: 1 80%;*/
     flex: 3;
   }
 
 
   /* Helper Classes ------------------------- */
-
 
   /* SECTIONS */
 
@@ -1728,12 +1648,10 @@ div.comment:first-of-type {
 
   .site-icon {
     margin-bottom: 0.8em;
-    transition: transform 0.5s;
     transition: transform 0.6s cubic-bezier(.38,-0.61,.3,1.44);
   }
 
   .site-icon:hover {
-    /*transform: rotate(-5deg);*/
     transform: translateY(-4px);
   }
 
@@ -1754,6 +1672,7 @@ div.comment:first-of-type {
      display: none;
    }
 
+
   /* Post: Archive ------------------------- */
 
   .archive-header {
@@ -1763,10 +1682,6 @@ div.comment:first-of-type {
   .archive-title {
     font-size: 3.2rem;
   }
-
-  /*body:not(.single) article {
-    margin-bottom: 2rem;
-  }*/
 
   .blog-posts {
     display: flex;
@@ -1788,6 +1703,7 @@ div.comment:first-of-type {
   body:not(.single) #main-content .blog-posts article:nth-of-type(2) > figure {
     margin-top: 0;
   }
+
 
   /* Post: Archive & Single ---------------- */
 
@@ -1816,7 +1732,6 @@ div.comment:first-of-type {
     margin-top: 5rem;
     margin-bottom: 5rem;
     padding-bottom: 5rem;
-    /*border: 0;*/
   }
 
   .pagination-single-inner {
@@ -1843,6 +1758,7 @@ div.comment:first-of-type {
   .pagination-single .next-post .arrow {
     margin: 0 0 0 2rem;
   }
+
 
   /* Comments ------------------------------ */
 
@@ -1982,7 +1898,6 @@ div.comment:first-of-type {
   /* Site Footer --------------------------- */
 
   #site-footer {
-    margin-top: 8rem;
     margin-top: 5rem;
   }
 
@@ -2030,6 +1945,12 @@ div.comment:first-of-type {
   }
 }
 
+@media (min-width: 700px) and (max-width: 1024px) {
+  body:not(.single) h2.entry-title {
+    font-size: 3.6rem;
+  }
+}
+
 
 @media (min-width: 836px) {
 
@@ -2037,23 +1958,16 @@ div.comment:first-of-type {
 
   #sidebar-left,
   #sidebar-right {
-    /*flex: 1 20%;*/
     flex: 1;
   }
 
   #main-content {
-    /*flex: 1 80%;*/
     flex: 4;
   }
 }
 
 
 /* Post: Archive & Single ---------------- */
-
-/*h2.entry-title {
-  font-size: 3.6rem;
-}*/
-
 
 @media ( min-width: 1000px ) {
 
@@ -2082,7 +1996,6 @@ div.comment:first-of-type {
     text-align: right;
     margin: 0 0 0 auto;
   }
-
 }
 
 
@@ -2092,9 +2005,7 @@ div.comment:first-of-type {
 
   /* TITLES */
 
-  h1,
-  .heading-size-1 {
-    font-size: 8.4rem;
+  h1 {
     font-size: 6.4rem;
   }
 
