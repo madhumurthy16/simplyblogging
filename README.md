@@ -1,5 +1,5 @@
 # Simply Blogging - A Custom WordPress Theme. 
-View live: https://simplyblogging.netlify.app/
+View live: <a href="https://simplyblogging.netlify.app/" target="_blank">https://simplyblogging.netlify.app/</a>
 
 ### Description: 
 Simply Blogging is a custom built WordPress theme suitable for, health and fitness, food, lifestyle, personal or travel blogging. It is mobile first and fully responsive. 
