@@ -39,6 +39,6 @@
   <?php
   // Output the menu modal
   get_template_part( 'template-parts/modal-menu' );
-  
+
   // Output the search form
   get_template_part ('template-parts/search-form' );
