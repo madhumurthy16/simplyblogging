@@ -1,6 +1,6 @@
 <?php
 /**
-* The template for displaying the 404 template in Simply Blogging theme.
+* The template for displaying 404 pages (not found) in Simply Blogging theme.
 *
 */
 
