@@ -1,4 +1,5 @@
-# Simply Blogging - A Custom WordPress Theme. 
+# Simply Blogging - A Custom WordPress Theme. View live: [Simply Blogging WordPress Theme](https://simplyblogging.netlify.app/)
+
 View live: [Simply Blogging WordPress Theme](https://simplyblogging.netlify.app/)
 
 ### Description: 
