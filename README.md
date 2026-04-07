@@ -8,9 +8,6 @@ The theme has a two column layout (with main content and a sidebar), footer with
 ### Built with:
 HTML5, CSS3, PHP, JavaScript, WordPress
 
-### Challenges:
-
-
 ### Resources:
 - [WordPress 2020 Default Theme](https://wordpress.org/themes/twentytwenty/)
 
