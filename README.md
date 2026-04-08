@@ -7,6 +7,7 @@ The theme has a two column layout (with main content and a sidebar), footer with
 
 ### Technology Used:
 HTML5, CSS3, PHP, JavaScript, WordPress
+
 Hosted on Netlify.
 
 ### Resources:
